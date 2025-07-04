@@ -80,6 +80,9 @@ flutter:
     - assets/images/quizAssets/303.jpg
     - assets/images/quizAssets/410.jpg
     - assets/images/quizAssets/502.jpg
+    - assets/images/quizAssets/602.jpg
+    - assets/images/quizAssets/609.jpg
+    - assets/images/quizAssets/704.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

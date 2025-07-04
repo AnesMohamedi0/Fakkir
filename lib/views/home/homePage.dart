@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:general_knowledge_app/database/mapRepo.dart';
 import 'package:general_knowledge_app/main.dart';
 import 'package:general_knowledge_app/models/map.dart';
 import 'package:general_knowledge_app/providers/mapProvider.dart';
@@ -14,22 +15,41 @@ import 'package:general_knowledge_app/views/shared/returnButton.dart';
 import 'package:general_knowledge_app/views/shared/someviews.dart';
 import 'package:provider/provider.dart';
 
+// ignore: must_be_immutable
 class HomePage extends StatefulWidget {
-  HomePage({super.key});
+  int? currentMapId;
+  HomePage({super.key, required this.currentMapId});
 
   @override
   State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
+  late ScrollController _scrollController;
+
   @override
   void initState() {
     super.initState();
     updateMaps();
+    _scrollController = ScrollController();
   }
+
+  int? currentMapId;
 
   void updateMaps() async {
     await Provider.of<MapProvider>(context, listen: false).updateMaps();
+    if (widget.currentMapId != null) {
+      // Wait for the next frame to make sure ListView is built
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        _scrollController.animateTo(
+          (widget.currentMapId! - 3 < 0 ? 0 : widget.currentMapId! - 3) *
+              MediaQuery.of(context).size.height *
+              0.155,
+          duration: Duration(milliseconds: 1000),
+          curve: Curves.easeInOut,
+        );
+      });
+    }
   }
 
   bool _initialized = false;
@@ -86,6 +106,7 @@ class _HomePageState extends State<HomePage> {
                       child: Consumer<MapProvider>(
                         builder: (context, provider, child) {
                           return ListView.builder(
+                            controller: _scrollController,
                             itemCount: provider.getMapsLength(),
                             itemBuilder: (context, index) {
                               GameMap? map = provider.getMapByIndex(index);

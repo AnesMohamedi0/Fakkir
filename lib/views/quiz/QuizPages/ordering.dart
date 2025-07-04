@@ -44,8 +44,8 @@ class _OrderingPageState extends State<OrderingPage> {
                   children: [
                     Wrap(
                       alignment: WrapAlignment.center,
-                      spacing: height * 0.006,
-                      runSpacing: height * 0.005,
+                      spacing: height * 0.015,
+                      runSpacing: height * 0.01,
                       children: [
                         ...List.generate(
                           provider.input.length,

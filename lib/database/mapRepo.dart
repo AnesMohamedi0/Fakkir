@@ -13,6 +13,18 @@ class MapRepository {
     );
   }
 
+  Future<int?> getTheCurrentMap() async {
+    final db = await initDB();
+    final map = await db.query(
+      'GameMap',
+      where: 'isOpen = ?',
+      whereArgs: [true],
+      orderBy: 'id DESC',
+      limit: 1,
+    );
+    return map.isNotEmpty ? GameMap.fromMap(map.first).id : null;
+  }
+
   Future<GameMap?> getGameMapById(int id) async {
     final db = await initDB();
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:general_knowledge_app/database/mapRepo.dart';
 import 'package:general_knowledge_app/providers/playerprovider.dart';
 import 'package:general_knowledge_app/views/home/homePage.dart';
 import 'package:general_knowledge_app/main.dart';
@@ -17,8 +18,19 @@ class WelcomePage extends StatefulWidget {
 }
 
 bool dailyCoins = false;
+int? currentMapId;
 
 class _WelcomePageState extends State<WelcomePage> {
+  @override
+  void initState() {
+    getCuurentMap();
+    super.initState();
+  }
+
+  void getCuurentMap() async {
+    currentMapId = await MapRepository().getTheCurrentMap();
+  }
+
   @override
   Widget build(BuildContext context) {
     double width = ScreenConfig.width(context);
@@ -70,7 +82,9 @@ class _WelcomePageState extends State<WelcomePage> {
                           Navigator.push(
                             context,
                             PageRouteBuilder(
-                              pageBuilder: (_, __, ___) => HomePage(),
+                              pageBuilder:
+                                  (_, __, ___) =>
+                                      HomePage(currentMapId: currentMapId),
                               transitionsBuilder: (_, animation, __, child) {
                                 return FadeTransition(
                                   opacity: animation,

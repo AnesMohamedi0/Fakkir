@@ -11,8 +11,8 @@ class BackgroundPainter extends CustomPainter {
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
-              Color.fromARGB(70, 87, 255, 255),
-              Color.fromARGB(45, 87, 255, 255),
+              Color.fromARGB(70, 1, 255, 255),
+              Color.fromARGB(44, 30, 255, 255),
             ],
           ).createShader(Rect.fromLTWH(0, 0, size.width, size.height));
 
@@ -78,8 +78,8 @@ class BackgroundPainter extends CustomPainter {
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
-              Color.fromARGB(60, 87, 255, 255),
-              Color.fromARGB(35, 87, 255, 255),
+              Color.fromARGB(59, 0, 255, 255),
+              Color.fromARGB(34, 36, 255, 255),
             ],
           ).createShader(Rect.fromLTWH(0, 0, size.width, size.height));
 
@@ -140,8 +140,8 @@ class BackgroundPainter extends CustomPainter {
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
-              Color.fromARGB(70, 255, 215, 0),
-              Color.fromARGB(35, 255, 215, 0),
+              Color.fromARGB(100, 255, 215, 0),
+              Color.fromARGB(55, 255, 215, 0),
             ],
           ).createShader(Rect.fromLTWH(0, 0, size.width, size.height));
 
@@ -200,8 +200,8 @@ class BackgroundPainter extends CustomPainter {
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
-              Color.fromARGB(60, 255, 215, 0),
-              Color.fromARGB(30, 255, 215, 0),
+              Color.fromARGB(80, 255, 215, 0),
+              Color.fromARGB(50, 255, 215, 0),
             ],
           ).createShader(Rect.fromLTWH(0, 0, size.width, size.height));
 

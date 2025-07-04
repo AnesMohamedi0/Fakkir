@@ -9,6 +9,8 @@ import 'package:general_knowledge_app/seeders/quizBymap.dart/arabicGulf.dart';
 import 'package:general_knowledge_app/seeders/quizBymap.dart/egyptSudan.dart';
 import 'package:general_knowledge_app/seeders/quizBymap.dart/levant.dart';
 import 'package:general_knowledge_app/seeders/quizBymap.dart/maghreb.dart';
+import 'package:general_knowledge_app/seeders/quizBymap.dart/bulkans.dart';
+import 'package:general_knowledge_app/seeders/quizBymap.dart/southEu.dart';
 import 'package:general_knowledge_app/seeders/quizBymap.dart/turkeyGreece.dart';
 import 'package:sqflite/sqflite.dart';
 
@@ -20,6 +22,8 @@ Future<void> initQuiz(Database db) async {
   quizzes += quizMapArabicGulf;
   quizzes += quizMapTurkeyGreece;
   quizzes += quizMapLevant;
+  quizzes += quizMapBulkans;
+  quizzes += quizMapSouthEu;
 
   final Map<Type, String> quizTableMap = {
     IntervalQuiz: 'intervalQuiz',
