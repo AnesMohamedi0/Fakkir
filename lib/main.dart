@@ -75,8 +75,6 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-bool newPlayer = true;
-
 class ScreenConfig {
   static double width(BuildContext context) =>
       MediaQuery.of(context).size.width;
