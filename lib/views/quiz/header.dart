@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:general_knowledge_app/main.dart';
 import 'package:general_knowledge_app/painters/quizpainter.dart';
 import 'package:general_knowledge_app/providers/quizProvider.dart';
 import 'package:general_knowledge_app/views/shared/someviews.dart';
@@ -10,8 +9,8 @@ class QuizHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double width = ScreenConfig.width(context);
-    double height = ScreenConfig.height(context);
+    double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
     return Stack(
       children: [
         Positioned(

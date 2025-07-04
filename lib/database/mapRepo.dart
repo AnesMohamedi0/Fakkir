@@ -143,4 +143,12 @@ class MapRepository {
       whereArgs: [map.id],
     );
   }
+
+  Future<int> getMapsDoneCount() async {
+    final db = await initDB();
+    final result = await db.rawQuery(
+      'SELECT count(*) FROM GameMap where isDone = 1',
+    );
+    return Sqflite.firstIntValue(result) ?? 0;
+  }
 }

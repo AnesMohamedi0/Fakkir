@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:general_knowledge_app/main.dart';
 import 'package:general_knowledge_app/models/map.dart';
 import 'package:general_knowledge_app/painters/selectionpainter.dart';
 import 'package:general_knowledge_app/providers/mapProvider.dart';
@@ -20,9 +19,8 @@ class MapsDisplay extends StatefulWidget {
 class _MapsDisplayState extends State<MapsDisplay> {
   @override
   Widget build(BuildContext context) {
-    double width = ScreenConfig.width(context);
-    double height = ScreenConfig.height(context);
-
+    double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
       width: width,

@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:general_knowledge_app/main.dart';
 import 'package:general_knowledge_app/providers/playerprovider.dart';
 import 'package:general_knowledge_app/views/shared/popUps/heartPopUp.dart';
 import 'package:general_knowledge_app/views/shared/someviews.dart';
@@ -13,8 +12,8 @@ class HeartsContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double height = ScreenConfig.height(context);
-    double width = ScreenConfig.width(context);
+    double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
     return GestureDetector(
       onTap: () {
         showDialog(context: context, builder: (context) => HeartPopUp());
@@ -85,8 +84,8 @@ class CoinsContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double height = ScreenConfig.height(context);
-    double width = ScreenConfig.width(context);
+    double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
     return Container(
       height: height * 0.02,
       width: coins > 999 ? width * 0.17 : width * 0.15,

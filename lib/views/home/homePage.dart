@@ -1,7 +1,6 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:general_knowledge_app/database/mapRepo.dart';
 import 'package:general_knowledge_app/main.dart';
 import 'package:general_knowledge_app/models/map.dart';
 import 'package:general_knowledge_app/providers/mapProvider.dart';

@@ -40,6 +40,16 @@ class MapProvider extends ChangeNotifier {
     MapRepository().updateGameMap(map);
   }
 
+  Future<void> loadMaps() async {
+    MapRepository mapRepository = MapRepository();
+    _maps.clear();
+    _isLoading = true;
+    notifyListeners();
+    _maps.addAll(await mapRepository.getAllGameMaps());
+    _isLoading = false;
+    notifyListeners();
+  }
+
   Future<void> loadMapsIncrementally() async {
     MapRepository mapRepository = MapRepository();
     int n = await mapRepository.getMapsCount();

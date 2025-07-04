@@ -1,8 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:general_knowledge_app/views/welcome/welcome.dart';
 import 'package:general_knowledge_app/database/initdb.dart';
 import 'package:general_knowledge_app/providers/quiz/completeProvider.dart';
 import 'package:general_knowledge_app/providers/mapProvider.dart';
@@ -12,10 +12,14 @@ import 'package:general_knowledge_app/providers/quiz/matchingProvider.dart';
 import 'package:general_knowledge_app/providers/quiz/optionsProvider.dart';
 import 'package:general_knowledge_app/providers/quiz/orderingProvider.dart';
 import 'package:general_knowledge_app/providers/quizProvider.dart';
+import 'package:general_knowledge_app/views/welcome/welecome.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
+
   runApp(
     MultiProvider(
       providers: [
@@ -59,28 +63,33 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
+int mapDone = 0;
+int max = 0;
+bool isLoading = true;
+
 class _MyHomePageState extends State<MyHomePage> {
+  bool dailyCoins = false;
+
   @override
   void initState() {
     super.initState();
-    Future.microtask(
-      () => context.read<PlayerProvider>().loadPlayerFromPrefs(),
-    );
+    Future.microtask(() async {
+      try {
+        context.read<PlayerProvider>().loadPlayerFromPrefs();
+        await Provider.of<MapProvider>(context, listen: false).loadMaps();
+        await initDB();
+      } catch (e) {
+        print('Error during initialization: $e');
+      }
+    });
+
     initDB();
   }
 
   @override
   Widget build(BuildContext context) {
-    return WelcomePage();
+    return WelecomePage();
   }
-}
-
-class ScreenConfig {
-  static double width(BuildContext context) =>
-      MediaQuery.of(context).size.width;
-
-  static double height(BuildContext context) =>
-      MediaQuery.of(context).size.height;
 }
 
 Future<void> savePlayerData({

@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:general_knowledge_app/models/quiz/optionsQuiz.dart';
 import 'package:general_knowledge_app/providers/quiz/optionsProvider.dart';

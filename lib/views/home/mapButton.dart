@@ -9,11 +9,16 @@ import 'package:general_knowledge_app/views/shared/popUps/lockedPopUp.dart';
 import 'package:general_knowledge_app/views/shared/someviews.dart';
 import 'package:provider/provider.dart';
 
-class MapButton extends StatelessWidget {
+class MapButton extends StatefulWidget {
   final GameMap map;
 
   const MapButton({super.key, required this.map});
 
+  @override
+  State<MapButton> createState() => _MapButtonState();
+}
+
+class _MapButtonState extends State<MapButton> {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
@@ -27,34 +32,43 @@ class MapButton extends StatelessWidget {
           onPressed: () async {
             LevelRepository levelRepository = LevelRepository();
 
-            if (!map.isOpen) {
+            if (!widget.map.isOpen) {
               GameMap mapBefore =
-                  context.read<MapProvider>().getMapById(map.mapBeforeId!)!;
+                  context.read<MapProvider>().getMapById(
+                    widget.map.mapBeforeId!,
+                  )!;
               showDialog(
                 context: context,
                 builder: (context) => LockedPopUp(mapBefore: mapBefore.name),
               );
               return;
             }
-            map.levels = await levelRepository.getAllLevelsForMapId(map.id);
 
-            initPaths(map);
+            widget.map.levels = await levelRepository.getAllLevelsForMapId(
+              widget.map.id,
+            );
+            initPaths(widget.map);
 
-            context.read<MapProvider>().updateMap(map);
+            // Store the MapProvider reference before async operations
+            final mapProvider = context.read<MapProvider>();
+            mapProvider.updateMap(widget.map);
 
             await Navigator.push<bool>(
               context,
               PageRouteBuilder(
-                pageBuilder: (_, __, ___) => MapPage(mapId: map.id),
+                pageBuilder: (_, __, ___) => MapPage(mapId: widget.map.id),
                 transitionsBuilder: (_, animation, __, child) {
                   return FadeTransition(opacity: animation, child: child);
                 },
               ),
             );
 
-            await context.read<MapProvider>().updateMaps();
+            // Check if the widget is still mounted before using context
+            if (mounted) {
+              await mapProvider.updateMaps();
+            }
           },
-          child: MapNameText(text: map.name, size: height * 0.026),
+          child: MapNameText(text: widget.map.name, size: height * 0.026),
         ),
       ),
     );

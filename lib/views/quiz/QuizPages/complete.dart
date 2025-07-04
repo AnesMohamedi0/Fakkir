@@ -28,7 +28,6 @@ class _CompletePageState extends State<CompletePage> {
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
-    bool newLine = false;
     return Stack(
       children: [
         Positioned(

@@ -16,7 +16,7 @@ class _AnimatedGradientBackgroundState extends State<AnimatedGradientBackground>
   void initState() {
     super.initState();
     _controller = AnimationController(
-      duration: Duration(seconds: 12),
+      duration: Duration(seconds: 40),
       vsync: this,
     )..repeat(reverse: true);
     _animation = Tween(

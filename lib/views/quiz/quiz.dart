@@ -126,6 +126,17 @@ class _QuizPageState extends State<QuizPage> {
               ],
             ),
           ),
+          Positioned(
+            bottom: 0,
+            child: Container(
+              width: width,
+              alignment: Alignment.center,
+              child: SizedBox(
+                width: height * 0.1,
+                child: Image.asset('assets/images/logo.png', fit: BoxFit.cover),
+              ),
+            ),
+          ),
         ],
       ),
     );

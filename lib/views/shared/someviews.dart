@@ -1,22 +1,73 @@
 import 'package:flutter/material.dart';
-import 'package:general_knowledge_app/main.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class TitleText extends StatelessWidget {
   final String text;
+  final color;
   final int? size;
 
-  const TitleText({super.key, required this.text, this.size});
+  const TitleText({
+    super.key,
+    required this.text,
+    this.size,
+    required this.color,
+  });
 
   @override
   Widget build(BuildContext context) {
-    double height = ScreenConfig.height(context);
+    double height = MediaQuery.of(context).size.height;
     return Text(
       text,
+      textAlign: TextAlign.center,
+
       style: GoogleFonts.notoKufiArabic(
-        fontSize: size?.toDouble() ?? height * 0.105,
-        fontWeight: FontWeight.w500,
-        color: Colors.black,
+        fontSize: size?.toDouble() ?? height * 0.115,
+        fontWeight: FontWeight.w600,
+        color: color,
+        height: 0.95,
+      ),
+    );
+  }
+}
+
+class OptionsText extends StatelessWidget {
+  final String text;
+  final int margin;
+  final double? size;
+  final Color color;
+  final weight;
+  final align;
+  final double? letterSpacing;
+  final double? wordSpacing;
+
+  const OptionsText({
+    super.key,
+    required this.text,
+    this.margin = 0,
+    this.size,
+    this.color = Colors.black,
+    this.weight = FontWeight.w400,
+    this.align = TextAlign.right,
+    this.letterSpacing = 0.0,
+    this.wordSpacing = 0.0,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
+    return Container(
+      margin: EdgeInsets.only(right: margin.toDouble()),
+      child: Text(
+        text,
+        textAlign: align,
+
+        style: GoogleFonts.notoKufiArabic(
+          fontSize: size ?? height * 0.025,
+          color: color,
+          fontWeight: weight,
+          letterSpacing: letterSpacing,
+          wordSpacing: wordSpacing,
+        ),
       ),
     );
   }
@@ -42,7 +93,7 @@ class SubTitleText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double height = ScreenConfig.height(context);
+    double height = MediaQuery.of(context).size.height;
     return Container(
       margin: EdgeInsets.only(right: margin.toDouble()),
       child: Text(
@@ -78,7 +129,7 @@ class NumbersText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double height = ScreenConfig.height(context);
+    double height = MediaQuery.of(context).size.height;
     return Container(
       margin: EdgeInsets.only(right: margin.toDouble()),
       child: Text(
@@ -109,7 +160,7 @@ class MapNameText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double height = ScreenConfig.height(context);
+    double height = MediaQuery.of(context).size.height;
     return Container(
       margin: EdgeInsets.only(right: margin.toDouble()),
       child: Builder(
@@ -156,8 +207,8 @@ class ButtonsHome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double width = ScreenConfig.width(context);
-    double height = ScreenConfig.height(context);
+    double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
 
     return TextButton(
       onPressed: onPressed,
@@ -190,8 +241,8 @@ class TextFieldHome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double width = ScreenConfig.width(context);
-    double height = ScreenConfig.height(context);
+    double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
 
     return Container(
       width: width * 0.75,
