@@ -83,6 +83,11 @@ flutter:
     - assets/images/quizAssets/602.jpg
     - assets/images/quizAssets/609.jpg
     - assets/images/quizAssets/704.jpg
+    - assets/images/MapAssets/ship.png
+    - assets/images/MapAssets/palmtree.png
+    - assets/images/MapAssets/tree.png
+    - assets/images/MapAssets/mount.png
+    - assets/images/MapAssets/lighthouse.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

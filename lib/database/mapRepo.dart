@@ -151,4 +151,14 @@ class MapRepository {
     );
     return Sqflite.firstIntValue(result) ?? 0;
   }
+
+  Future<List<String>> getAssetsByMapId(int mapId) async {
+    final db = await initDB();
+    final result = await db.rawQuery(
+      'Select A.AssetPath from Asset A , GameMapAsset G where A.id = G.assetId and G.mapId = ?',
+      [mapId],
+    );
+
+    return result.map((row) => row['AssetPath'] as String).toList();
+  }
 }

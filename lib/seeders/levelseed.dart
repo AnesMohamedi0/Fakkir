@@ -43,7 +43,7 @@ List<Level> generateRandomLevels(GameMap map) {
     } else if (x - 30 < 60) {
       moveRight = true;
     } else {
-      moveRight = rand.nextDouble() < 0.1 ? !moveRightLast : moveRightLast;
+      moveRight = rand.nextDouble() < 0 ? !moveRightLast : moveRightLast;
     }
     moveRightLast = moveRight;
 

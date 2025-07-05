@@ -1,5 +1,7 @@
 import 'package:general_knowledge_app/models/map.dart';
+import 'package:general_knowledge_app/seeders/assetseed.dart';
 import 'package:general_knowledge_app/seeders/levelseed.dart';
+import 'package:general_knowledge_app/seeders/mapassetseed.dart';
 import 'package:general_knowledge_app/seeders/mapseed.dart';
 import 'package:general_knowledge_app/seeders/quizseed.dart';
 import 'package:path/path.dart';
@@ -39,6 +41,23 @@ Future<Database> initDB() async {
         mapId INTEGER NOT NULL,
         FOREIGN KEY (levelBeforeId) REFERENCES Level(id),
         FOREIGN KEY (mapId) REFERENCES GameMap(id)
+      )
+    ''');
+
+      await db.execute('''
+      CREATE TABLE Asset (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        AssetPath TEXT
+      )
+    ''');
+
+      await db.execute('''
+      CREATE TABLE GameMapAsset (
+        mapId INTEGER,
+        assetId INTEGER,
+        FOREIGN KEY (mapId) REFERENCES GameMap(id),
+        FOREIGN KEY (assetId) REFERENCES Asset(id),
+        PRIMARY KEY (mapId, assetId)
       )
     ''');
 
@@ -146,6 +165,12 @@ CREATE TABLE intervalQuiz (
 
       await initQuiz(db);
       print("quiz seeded");
+
+      await initAssets(db);
+      print("assets seeded");
+
+      await initGameMapAssets(db);
+      print("game map assets seeded");
     },
   );
 }

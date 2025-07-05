@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:general_knowledge_app/database/initdb.dart';
+import 'package:general_knowledge_app/providers/assetsProvider.dart';
 import 'package:general_knowledge_app/providers/quiz/completeProvider.dart';
 import 'package:general_knowledge_app/providers/mapProvider.dart';
 import 'package:general_knowledge_app/providers/playerprovider.dart';
@@ -31,6 +32,7 @@ void main() {
         ChangeNotifierProvider(create: (_) => OptionsProvider()),
         ChangeNotifierProvider(create: (_) => OrderingProvider()),
         ChangeNotifierProvider(create: (_) => MatchingProvider()),
+        ChangeNotifierProvider(create: (_) => AssetsProvider()),
       ],
       child: const MyApp(),
     ),

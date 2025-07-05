@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:general_knowledge_app/providers/assetsProvider.dart';
 import 'package:general_knowledge_app/views/map/map.dart';
 import 'package:general_knowledge_app/database/levelRepo.dart'
     show LevelRepository;
@@ -51,6 +52,7 @@ class _MapButtonState extends State<MapButton> {
 
             // Store the MapProvider reference before async operations
             final mapProvider = context.read<MapProvider>();
+            context.read<AssetsProvider>().loadAssetsByMapId(widget.map.id);
             mapProvider.updateMap(widget.map);
 
             await Navigator.push<bool>(
