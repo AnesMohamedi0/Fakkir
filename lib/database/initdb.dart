@@ -55,6 +55,8 @@ Future<Database> initDB() async {
       CREATE TABLE GameMapAsset (
         mapId INTEGER,
         assetId INTEGER,
+        posX REAL,
+        posY REAL,
         FOREIGN KEY (mapId) REFERENCES GameMap(id),
         FOREIGN KEY (assetId) REFERENCES Asset(id),
         PRIMARY KEY (mapId, assetId)

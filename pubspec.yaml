@@ -88,6 +88,8 @@ flutter:
     - assets/images/MapAssets/tree.png
     - assets/images/MapAssets/mount.png
     - assets/images/MapAssets/lighthouse.png
+    - assets/images/MapAssets/snowforest.png
+    - assets/images/MapAssets/oasis.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

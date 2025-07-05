@@ -1,22 +1,61 @@
+import 'dart:math';
+
+import 'package:general_knowledge_app/models/level.dart';
 import 'package:sqflite/sqflite.dart';
 
 Future<void> initGameMapAssets(Database db) async {
-  var pairs = [
-    (map: 1, asset: 1),
-    (map: 1, asset: 2),
-    (map: 1, asset: 5),
-    (map: 2, asset: 1),
-    (map: 2, asset: 4),
-    (map: 2, asset: 5),
-    (map: 3, asset: 3),
-    (map: 3, asset: 4),
-    (map: 3, asset: 5),
-  ];
+  await insertMapAssets(1, [2, 6, 5], db);
+  await insertMapAssets(2, [2, 7, 3], db);
+  await insertMapAssets(3, [1, 3, 4], db);
+  await insertMapAssets(4, [5, 4, 2], db);
+  print("✅ All game map assets inserted");
+}
 
-  for (var element in pairs) {
-    await db.insert('GameMapAsset', {
-      'mapId': element.map,
-      'assetId': element.asset,
-    }, conflictAlgorithm: ConflictAlgorithm.replace);
+Future<void> insertMapAssets(int mapId, List<int> assetIds, Database db) async {
+  final List<Map<String, dynamic>> levels = await db.query(
+    'Level',
+    where: 'mapId = ?',
+    whereArgs: [mapId],
+  );
+
+  final List<Level> levelList =
+      levels.map((map) => Level.fromMap(map)).toList();
+
+  // ✅ Ensure there are enough levels
+  if (levelList.length <= 8) {
+    print(
+      "❌ Not enough levels for mapId=$mapId. Found only ${levelList.length} levels. Skipping asset insert.",
+    );
+    return;
   }
+
+  // ✅ Choose specific levels
+  final Level l1 = levelList[1];
+  final Level l2 = levelList[5];
+  final Level l3 = levelList[8];
+
+  double x1 = 15;
+  double x2 = 80;
+  double x3 = 20;
+
+  await db.insert('GameMapAsset', {
+    'mapId': mapId,
+    'assetId': assetIds[0],
+    'posX': x1,
+    'posY': l1.posY - 10,
+  }, conflictAlgorithm: ConflictAlgorithm.replace);
+
+  await db.insert('GameMapAsset', {
+    'mapId': mapId,
+    'assetId': assetIds[1],
+    'posX': x2,
+    'posY': l2.posY,
+  }, conflictAlgorithm: ConflictAlgorithm.replace);
+
+  await db.insert('GameMapAsset', {
+    'mapId': mapId,
+    'assetId': assetIds[2],
+    'posX': x3,
+    'posY': l3.posY,
+  }, conflictAlgorithm: ConflictAlgorithm.replace);
 }

@@ -1,38 +1,25 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:general_knowledge_app/database/assetMapRepo.dart';
 import 'package:general_knowledge_app/database/mapRepo.dart';
 import 'package:general_knowledge_app/database/levelRepo.dart';
+import 'package:general_knowledge_app/models/MapAsset.dart';
 import 'package:general_knowledge_app/models/level.dart';
 
 class AssetsProvider extends ChangeNotifier {
-  List<String> assets = [];
-  List<Point<double>> assetPositions = [];
-
-  final Random _random = Random();
+  List<MapAsset> assets = [];
 
   void loadAssetsByMapId(int mapId) async {
-    assets = await MapRepository().getAssetsByMapId(mapId);
-
-    assetPositions = [
-      Point(Random().nextDouble() * 2 + 4, Random().nextDouble() * 5 + 10),
-      Point(80, Random().nextDouble() * 10 + 50),
-      Point(Random().nextDouble() * 2 + 4, Random().nextDouble() * 5 + 85),
-    ];
-
-    assetPositions.shuffle();
+    assets = await AssetMapRepository().getAssetsByMapId(mapId);
+    notifyListeners();
   }
 
   /// Get asset position by index
   Point<double>? getAssetPositionByIndex(int index) {
-    if (index >= 0 && index < assetPositions.length) {
-      return assetPositions[index];
+    if (index >= 0 && index < assets.length) {
+      return Point(assets[index].posX, assets[index].posY);
     }
     return null;
-  }
-
-  /// Get all asset positions
-  List<Point<double>> getAllAssetPositions() {
-    return List.from(assetPositions);
   }
 
   int getAssetsLength() {
@@ -45,7 +32,6 @@ class AssetsProvider extends ChangeNotifier {
 
   void clear() {
     assets.clear();
-    assetPositions.clear();
     notifyListeners();
   }
 }

@@ -70,27 +70,37 @@ int max = 0;
 bool isLoading = true;
 
 class _MyHomePageState extends State<MyHomePage> {
-  bool dailyCoins = false;
+  bool isLoading = true;
 
   @override
   void initState() {
     super.initState();
-    Future.microtask(() async {
+
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
       try {
+        await initDB();
         context.read<PlayerProvider>().loadPlayerFromPrefs();
         await Provider.of<MapProvider>(context, listen: false).loadMaps();
-        await initDB();
       } catch (e) {
         print('Error during initialization: $e');
+      } finally {
+        setState(() {
+          isLoading = false;
+        });
       }
     });
-
-    initDB();
   }
 
   @override
   Widget build(BuildContext context) {
-    return WelecomePage();
+    if (isLoading) {
+      return const Scaffold(
+        backgroundColor: Colors.black,
+        body: Center(child: CircularProgressIndicator()),
+      );
+    }
+
+    return const WelecomePage();
   }
 }
 

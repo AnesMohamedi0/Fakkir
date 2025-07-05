@@ -7,6 +7,8 @@ Future<void> initAssets(Database db) async {
     'assets/images/MapAssets/ship.png',
     'assets/images/MapAssets/tree.png',
     'assets/images/MapAssets/mount.png',
+    'assets/images/MapAssets/oasis.png',
+    'assets/images/MapAssets/snowforest.png',
   ];
 
   for (var asset in assets) {

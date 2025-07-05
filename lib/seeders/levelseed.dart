@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'package:general_knowledge_app/database/levelRepo.dart';
 import 'package:general_knowledge_app/database/mapRepo.dart';
 import 'package:general_knowledge_app/models/level.dart';
@@ -35,32 +34,50 @@ List<Level> generateRandomLevels(GameMap map) {
       mapId: map.id,
     ),
   );
+
   bool moveRight;
   bool moveRightLast = true;
-  for (int i = 2; i <= 10; i++) {
-    if (330 - x < 60) {
-      moveRight = false;
-    } else if (x - 30 < 60) {
-      moveRight = true;
-    } else {
-      moveRight = rand.nextDouble() < 0 ? !moveRightLast : moveRightLast;
-    }
-    moveRightLast = moveRight;
 
-    int addedX = rand.nextInt(61);
-    int deltaX;
-    if (moveRight) {
-      deltaX = addedX + 60;
+  for (int i = 2; i <= 10; i++) {
+    // Special fixed positions for levels 6 and 9
+    if (i == 6) {
+      x = 10; // Fixed x position for level 6
+    } else if (i == 9) {
+      x = 70; // Fixed x position for level 9
     } else {
-      deltaX = -(addedX + 60);
+      // Normal random generation for other levels
+      if (330 - x < 60) {
+        moveRight = false;
+      } else if (x - 30 < 60) {
+        moveRight = true;
+      } else {
+        moveRight = rand.nextDouble() < 0 ? !moveRightLast : moveRightLast;
+      }
+      moveRightLast = moveRight;
+
+      int addedX = rand.nextInt(30);
+      int deltaX;
+      if (moveRight) {
+        deltaX = addedX + 60;
+      } else {
+        deltaX = -(addedX + 60);
+      }
+      int newX = x + deltaX;
+      x = newX.clamp(30, 330);
     }
-    int newX = x + deltaX;
-    x = newX.clamp(30, 330);
 
     if (i == 10) {
       y = 183;
     } else {
-      double addedY = 20 - addedX / 3;
+      // Calculate Y position based on level progression
+      if (i == 6) {
+        x = 30;
+      } else if (i == 9) {
+        x = 300;
+      }
+      // Normal Y calculation for other levels
+      int addedX = rand.nextInt(40);
+      double addedY = 22 - addedX / 3;
       y = y - addedY.toInt() - 48;
     }
 
