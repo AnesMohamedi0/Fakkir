@@ -74,6 +74,8 @@ List<Level> generateRandomLevels(GameMap map) {
         x = 30;
       } else if (i == 9) {
         x = 300;
+      } else if (i == 3) {
+        x = 330;
       }
       // Normal Y calculation for other levels
       int addedX = rand.nextInt(40);

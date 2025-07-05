@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:general_knowledge_app/database/mapRepo.dart';
-import 'package:general_knowledge_app/providers/assetsProvider.dart';
 import 'package:general_knowledge_app/providers/mapProvider.dart';
 import 'package:general_knowledge_app/views/map/assetDisplay.dart';
 import 'package:general_knowledge_app/views/map/backgroundPaint.dart';
@@ -25,7 +23,6 @@ class MapPage extends StatefulWidget {
 class _MapPageState extends State<MapPage> {
   @override
   Widget build(BuildContext context) {
-    final height = MediaQuery.of(context).size.height;
     return Scaffold(
       body: Stack(
         children: [

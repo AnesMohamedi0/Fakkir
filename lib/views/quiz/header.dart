@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:general_knowledge_app/painters/quizpainter.dart';
 import 'package:general_knowledge_app/providers/quizProvider.dart';
+import 'package:general_knowledge_app/views/shared/colors.dart';
 import 'package:general_knowledge_app/views/shared/someviews.dart';
 import 'package:provider/provider.dart';
 
@@ -14,9 +15,17 @@ class QuizHeader extends StatelessWidget {
     return Stack(
       children: [
         Positioned(
-          top: height * 0.06,
+          top:
+              context.read<QuizProvider>().quiz!.imagePath == null
+                  ? height * 0.105
+                  : height * 0.06,
           child: CustomPaint(
-            size: Size(width, height * 0.5),
+            size: Size(
+              width,
+              context.read<QuizProvider>().quiz!.imagePath == null
+                  ? height * 0.4
+                  : height * 0.5,
+            ),
             painter: QuizPainter(),
           ),
         ),
@@ -41,14 +50,19 @@ class QuizHeader extends StatelessWidget {
                         text: provider.quiz!.question,
                         weight: FontWeight.w500,
                         align: TextAlign.center,
+                        color: colorText,
                       ),
                       if (provider.quiz!.imagePath != null)
                         Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(2),
+                            border: Border.all(color: color1, width: 2.5),
+                          ),
                           width: width * 0.6,
                           height: height * 0.15,
                           child: Image.asset(
                             provider.quiz!.imagePath!,
-                            fit: BoxFit.contain,
+                            fit: BoxFit.cover,
                           ),
                         ),
                     ],

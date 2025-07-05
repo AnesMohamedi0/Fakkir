@@ -13,6 +13,7 @@ import 'package:general_knowledge_app/providers/quiz/matchingProvider.dart';
 import 'package:general_knowledge_app/providers/quiz/optionsProvider.dart';
 import 'package:general_knowledge_app/providers/quiz/orderingProvider.dart';
 import 'package:general_knowledge_app/providers/quizProvider.dart';
+import 'package:general_knowledge_app/views/shared/animatedBackground.dart';
 import 'package:general_knowledge_app/views/welcome/welecome.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -93,10 +94,29 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
     if (isLoading) {
-      return const Scaffold(
-        backgroundColor: Colors.black,
-        body: Center(child: CircularProgressIndicator()),
+      return Scaffold(
+        body: Stack(
+          children: [
+            AnimatedGradientBackground(),
+            Positioned(
+              top: height * 0.4,
+              child: Container(
+                width: width,
+                alignment: Alignment.center,
+                child: SizedBox(
+                  width: height * 0.6,
+                  child: Image.asset(
+                    'assets/images/logo.png',
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
       );
     }
 

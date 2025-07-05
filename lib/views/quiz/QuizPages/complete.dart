@@ -5,6 +5,7 @@ import 'package:general_knowledge_app/providers/quizProvider.dart';
 import 'package:general_knowledge_app/views/quiz/confirmButton.dart';
 import 'package:general_knowledge_app/views/quiz/getHintButton.dart';
 import 'package:general_knowledge_app/views/quiz/getSolutionButton.dart';
+import 'package:general_knowledge_app/views/shared/colors.dart';
 import 'package:general_knowledge_app/views/shared/someviews.dart';
 import 'package:provider/provider.dart';
 
@@ -73,9 +74,9 @@ class _CompletePageState extends State<CompletePage> {
                                           borderRadius: BorderRadius.circular(
                                             4,
                                           ),
-                                          side: const BorderSide(
-                                            color: Colors.black,
-                                            width: 2,
+                                          side: BorderSide(
+                                            color: colorTextDark,
+                                            width: 2.5,
                                           ),
                                         ),
                                         padding: EdgeInsets.zero,
@@ -126,15 +127,20 @@ class _CompletePageState extends State<CompletePage> {
                                   colors:
                                       provider.isSelected[index] != -1
                                           ? [
-                                            Colors.amber.shade300,
-                                            Colors.amber.shade400,
+                                            colormain[200]!,
+                                            const Color.fromARGB(
+                                              255,
+                                              233,
+                                              196,
+                                              170,
+                                            ),
                                           ]
                                           : [Colors.white38, Colors.white24],
                                 ),
                                 borderRadius: BorderRadius.circular(4),
                                 border: Border.all(
-                                  color: Colors.black,
-                                  width: 2,
+                                  color: colorTextDark,
+                                  width: 2.5,
                                 ),
                               ),
                               child: SubTitleText(

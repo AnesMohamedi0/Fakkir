@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:general_knowledge_app/painters/colors.dart';
+import 'package:general_knowledge_app/views/shared/colors.dart';
 
 class PopUpPainter extends CustomPainter {
   @override
@@ -250,6 +250,12 @@ class PopUpPainter extends CustomPainter {
     _layer1_3(canvas, size);
     _layer2(canvas, size);
     canvas.restore();
+    final borderPaint =
+        Paint()
+          ..color = const Color.fromARGB(255, 139, 69, 19) // Border color
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = 3.0;
+    canvas.drawPath(path_0, borderPaint);
   }
 
   _layer1_1(Canvas canvas, Size size) {
@@ -810,6 +816,12 @@ class PopUpPainter extends CustomPainter {
     _layer2_1(canvas, size);
     _layer2_2(canvas, size);
     canvas.restore();
+    final borderPaint =
+        Paint()
+          ..color = const Color.fromARGB(255, 139, 69, 19) // Border color
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = 3.0;
+    canvas.drawPath(path_1, borderPaint);
   }
 
   _layer2_1(Canvas canvas, Size size) {

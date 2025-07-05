@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:general_knowledge_app/painters/colors.dart';
+import 'package:general_knowledge_app/views/shared/colors.dart';
 
 class SelectionPainter extends CustomPainter {
   @override
@@ -58,8 +58,6 @@ class SelectionPainter extends CustomPainter {
     );
     path_0.lineTo(size.width * 0.8111111, size.height * 0.8578723);
     path_0.lineTo(size.width * 0.8033333, size.height * 0.9029787);
-    path_0.lineTo(size.width * 0.8066667, size.height * 0.7838298);
-    path_0.lineTo(size.width * 0.7977778, size.height * 0.9072340);
     path_0.quadraticBezierTo(
       size.width * 0.6799444,
       size.height * 0.8076596,
@@ -74,8 +72,6 @@ class SelectionPainter extends CustomPainter {
     );
     path_0.lineTo(size.width * 0.4155556, size.height * 0.8221277);
     path_0.lineTo(size.width * 0.4144444, size.height * 0.8731915);
-    path_0.lineTo(size.width * 0.4088889, size.height * 0.7880851);
-    path_0.lineTo(size.width * 0.4077778, size.height * 0.8817021);
     path_0.quadraticBezierTo(
       size.width * 0.2587778,
       size.height * 0.9753191,
@@ -114,8 +110,6 @@ class SelectionPainter extends CustomPainter {
     );
     path_0.lineTo(size.width * 0.0515556, size.height * 0.2280851);
     path_0.lineTo(size.width * 0.1144444, size.height * 0.2042553);
-    path_0.lineTo(size.width * 0.1275556, size.height * 0.2791489);
-    path_0.lineTo(size.width * 0.1204444, size.height * 0.2008511);
     path_0.quadraticBezierTo(
       size.width * 0.2138333,
       size.height * 0.1744681,
@@ -130,8 +124,6 @@ class SelectionPainter extends CustomPainter {
     );
     path_0.lineTo(size.width * 0.3926667, size.height * 0.1489362);
     path_0.lineTo(size.width * 0.3971111, size.height * 0.0748936);
-    path_0.lineTo(size.width * 0.4026667, size.height * 0.2485106);
-    path_0.lineTo(size.width * 0.4033333, size.height * 0.0536170);
     path_0.quadraticBezierTo(
       size.width * 0.4818333,
       size.height * 0.0319149,
@@ -167,6 +159,13 @@ class SelectionPainter extends CustomPainter {
     _drawDuneLayer2(canvas, size);
 
     canvas.restore();
+
+    final borderPaint =
+        Paint()
+          ..color = const Color.fromARGB(255, 139, 69, 19) // Border color
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = size.height > 150 ? 3.5 : 2.0;
+    canvas.drawPath(path_0, borderPaint);
   }
 
   void _drawDuneLayer1_1(Canvas canvas, Size size) {
@@ -924,6 +923,12 @@ class SelectionPainter extends CustomPainter {
     _drawDuneLayer2_3(canvas, size);
 
     canvas.restore();
+    final borderPaint =
+        Paint()
+          ..color = const Color.fromARGB(255, 139, 69, 19) // Border color
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = size.height > 150 ? 3.5 : 2.0;
+    canvas.drawPath(path_1, borderPaint);
   }
 
   void _drawDuneLayer2_1(Canvas canvas, Size size) {

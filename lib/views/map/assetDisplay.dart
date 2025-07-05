@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:general_knowledge_app/models/MapAsset.dart';
 import 'package:general_knowledge_app/providers/assetsProvider.dart';

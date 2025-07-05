@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:general_knowledge_app/views/shared/colors.dart';
 
 class ReturnButton extends StatelessWidget {
   final bool home;
@@ -15,7 +16,7 @@ class ReturnButton extends StatelessWidget {
         icon: Icon(
           home ? Icons.home : Icons.arrow_back,
           size: height * 0.040,
-          color: Colors.black,
+          color: colorTextDark,
           weight: 800,
         ),
         onPressed: () {

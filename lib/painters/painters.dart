@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:general_knowledge_app/painters/colors.dart';
+import 'package:general_knowledge_app/views/shared/colors.dart';
 
 class TreasureMapBackground extends CustomPainter {
   @override

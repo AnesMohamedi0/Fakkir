@@ -1,17 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:general_knowledge_app/views/shared/colors.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class TitleText extends StatelessWidget {
   final String text;
-  final color;
+  final Color? color;
   final int? size;
 
-  const TitleText({
-    super.key,
-    required this.text,
-    this.size,
-    required this.color,
-  });
+  const TitleText({super.key, required this.text, this.size, this.color});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +19,8 @@ class TitleText extends StatelessWidget {
       style: GoogleFonts.notoKufiArabic(
         fontSize: size?.toDouble() ?? height * 0.115,
         fontWeight: FontWeight.w600,
-        color: color,
+        color: color ?? colorTextDark,
+
         height: 0.95,
       ),
     );
@@ -34,7 +31,7 @@ class OptionsText extends StatelessWidget {
   final String text;
   final int margin;
   final double? size;
-  final Color color;
+  final Color? color;
   final weight;
   final align;
   final double? letterSpacing;
@@ -45,7 +42,7 @@ class OptionsText extends StatelessWidget {
     required this.text,
     this.margin = 0,
     this.size,
-    this.color = Colors.black,
+    this.color,
     this.weight = FontWeight.w400,
     this.align = TextAlign.right,
     this.letterSpacing = 0.0,
@@ -63,7 +60,8 @@ class OptionsText extends StatelessWidget {
 
         style: GoogleFonts.notoKufiArabic(
           fontSize: size ?? height * 0.025,
-          color: color,
+          color: color ?? colorTextDark,
+
           fontWeight: weight,
           letterSpacing: letterSpacing,
           wordSpacing: wordSpacing,
@@ -77,7 +75,7 @@ class SubTitleText extends StatelessWidget {
   final String text;
   final int margin;
   final double? size;
-  final Color color;
+  final Color? color;
   final weight;
   final align;
 
@@ -86,7 +84,7 @@ class SubTitleText extends StatelessWidget {
     required this.text,
     this.margin = 0,
     this.size,
-    this.color = Colors.black,
+    this.color,
     this.weight = FontWeight.w400,
     this.align = TextAlign.right,
   });
@@ -101,7 +99,7 @@ class SubTitleText extends StatelessWidget {
         textAlign: align,
         style: GoogleFonts.notoKufiArabic(
           fontSize: size ?? height * 0.025,
-          color: color,
+          color: color ?? colorTextDark,
           fontWeight: weight,
         ),
       ),
@@ -113,7 +111,7 @@ class NumbersText extends StatelessWidget {
   final String text;
   final int margin;
   final double? size;
-  final Color color;
+  final Color? color;
   final weight;
   final align;
 
@@ -122,7 +120,7 @@ class NumbersText extends StatelessWidget {
     required this.text,
     this.margin = 0,
     this.size,
-    this.color = Colors.black,
+    this.color,
     this.weight = FontWeight.w400,
     this.align = TextAlign.right,
   });
@@ -137,7 +135,7 @@ class NumbersText extends StatelessWidget {
         textAlign: align,
         style: GoogleFonts.oswald(
           fontSize: size?.toDouble() ?? height * 0.03,
-          color: color,
+          color: color ?? colorTextDark,
           fontWeight: weight,
         ),
       ),
@@ -149,13 +147,13 @@ class MapNameText extends StatelessWidget {
   final String text;
   final int margin;
   final double? size;
-  final Color color;
+  final Color? color;
   const MapNameText({
     super.key,
     required this.text,
     this.margin = 0,
     this.size,
-    this.color = Colors.black,
+    this.color,
   });
 
   @override
@@ -178,18 +176,25 @@ class MapNameText extends StatelessWidget {
                 firstWord,
                 style: GoogleFonts.notoKufiArabic(
                   fontSize: size ?? height * 0.025,
-                  color: color,
+                  color: color ?? colorTextDark,
+
                   fontWeight: FontWeight.w500,
                 ),
               ),
               if (rest.isNotEmpty)
-                Text(
-                  rest,
-                  style: GoogleFonts.notoKufiArabic(
-                    fontSize: size ?? height * 0.025,
-                    color: color,
-                    fontWeight: FontWeight.w500,
-                  ),
+                Row(
+                  children: [
+                    SizedBox(width: height * 0.005),
+                    Text(
+                      rest,
+                      style: GoogleFonts.notoKufiArabic(
+                        fontSize: size ?? height * 0.025,
+                        color: color ?? colorTextDark,
+
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ],
                 ),
             ],
           );

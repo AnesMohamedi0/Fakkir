@@ -5,6 +5,7 @@ import 'package:general_knowledge_app/providers/quizProvider.dart';
 import 'package:general_knowledge_app/views/quiz/confirmButton.dart';
 import 'package:general_knowledge_app/views/quiz/getHintButton.dart';
 import 'package:general_knowledge_app/views/quiz/getSolutionButton.dart';
+import 'package:general_knowledge_app/views/shared/colors.dart';
 import 'package:general_knowledge_app/views/shared/someviews.dart';
 import 'package:provider/provider.dart';
 
@@ -67,8 +68,8 @@ class _OptionsPageState extends State<OptionsPage> {
                                 color:
                                     provider.isSelected[index]
                                         ? index % 2 == 0
-                                            ? Colors.amber.shade300
-                                            : Colors.amber.shade200
+                                            ? colormain[300]
+                                            : colormain[200]
                                         : const Color.fromARGB(
                                           55,
                                           255,
@@ -79,7 +80,7 @@ class _OptionsPageState extends State<OptionsPage> {
                                   height * 0.012,
                                 ),
                                 border: Border.all(
-                                  color: Colors.black,
+                                  color: colorTextDark,
                                   width: 2.3,
                                 ),
                               ),
@@ -87,7 +88,7 @@ class _OptionsPageState extends State<OptionsPage> {
                                 text: provider.options[index],
                                 size: height * 0.023,
                                 weight: FontWeight.w600,
-                                color: Colors.black,
+                                color: colorTextDark,
                                 align: TextAlign.center,
                               ),
                             ),

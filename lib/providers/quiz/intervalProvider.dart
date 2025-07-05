@@ -72,6 +72,7 @@ class IntervalProvider extends ChangeNotifier {
 
   getHint() {
     _hintUsed = true;
+    selected = minInterval;
     hintMargin = ((maxInterval - minInterval) / 3.5).toInt();
 
     double maxOffset = hintMargin! * 0.8;

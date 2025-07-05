@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:general_knowledge_app/painters/colors.dart';
+import 'package:general_knowledge_app/views/shared/colors.dart';
 
 class PlayMapHeaderPainter extends CustomPainter {
   @override
@@ -73,6 +73,13 @@ class PlayMapHeaderPainter extends CustomPainter {
     _drawDuneLayer1_4(canvas, size);
 
     canvas.restore();
+
+    final borderPaint =
+        Paint()
+          ..color = const Color.fromARGB(255, 139, 69, 19) // Border color
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = 3.0;
+    canvas.drawPath(path_0, borderPaint);
   }
 
   void _drawDuneLayer1_1(Canvas canvas, Size size) {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:general_knowledge_app/painters/colors.dart';
+import 'package:general_knowledge_app/views/shared/colors.dart';
 
 class QuizPainter extends CustomPainter {
   @override
@@ -305,6 +305,13 @@ class QuizPainter extends CustomPainter {
     _drawDuneLayer1_3(canvas, size);
 
     canvas.restore();
+
+    final borderPaint =
+        Paint()
+          ..color = const Color.fromARGB(255, 139, 69, 19) // Border color
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = 2.5;
+    canvas.drawPath(path_0, borderPaint);
   }
 
   void _drawDuneLayer1_1(Canvas canvas, Size size) {

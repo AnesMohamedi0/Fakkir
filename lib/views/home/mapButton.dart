@@ -6,6 +6,7 @@ import 'package:general_knowledge_app/database/levelRepo.dart'
 import 'package:general_knowledge_app/models/map.dart';
 import 'package:general_knowledge_app/providers/mapProvider.dart';
 import 'package:general_knowledge_app/seeders/pathseed.dart';
+import 'package:general_knowledge_app/views/shared/colors.dart';
 import 'package:general_knowledge_app/views/shared/popUps/lockedPopUp.dart';
 import 'package:general_knowledge_app/views/shared/someviews.dart';
 import 'package:provider/provider.dart';
@@ -26,7 +27,7 @@ class _MapButtonState extends State<MapButton> {
     double height = MediaQuery.of(context).size.height;
     return Positioned(
       top: height * 0.017,
-      right: width * 0.12,
+      right: width * 0.105,
       child: Container(
         height: height * 0.12,
         child: TextButton(
@@ -70,7 +71,11 @@ class _MapButtonState extends State<MapButton> {
               await mapProvider.updateMaps();
             }
           },
-          child: MapNameText(text: widget.map.name, size: height * 0.026),
+          child: MapNameText(
+            text: widget.map.name,
+            size: height * 0.026,
+            color: colorText,
+          ),
         ),
       ),
     );

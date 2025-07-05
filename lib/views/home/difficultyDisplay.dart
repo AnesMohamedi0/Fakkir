@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:general_knowledge_app/views/shared/colors.dart';
 import 'package:general_knowledge_app/views/shared/someviews.dart';
 
 class Difficultydisplay extends StatelessWidget {
@@ -17,13 +18,15 @@ class Difficultydisplay extends StatelessWidget {
         children: [
           SubTitleText(
             text: "المستوى: ",
-            size: height * 0.013,
+            size: height * 0.0145,
             weight: FontWeight.w500,
+            color: colorText,
           ),
           SubTitleText(
             text: difficulty,
-            size: height * 0.016,
-            weight: FontWeight.w500,
+            size: height * 0.0145,
+            weight: FontWeight.w700,
+            color: colorTextDark,
           ),
         ],
       ),

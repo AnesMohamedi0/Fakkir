@@ -5,6 +5,7 @@ import 'package:general_knowledge_app/providers/mapProvider.dart';
 import 'package:general_knowledge_app/views/home/difficultyDisplay.dart';
 import 'package:general_knowledge_app/views/home/mapButton.dart';
 import 'package:general_knowledge_app/views/home/progressBar.dart';
+import 'package:general_knowledge_app/views/shared/colors.dart';
 import 'package:provider/provider.dart';
 
 class MapsDisplay extends StatefulWidget {
@@ -42,7 +43,7 @@ class _MapsDisplayState extends State<MapsDisplay> {
                     child: Icon(
                       Icons.lock,
                       size: height * 0.135,
-                      color: const Color.fromARGB(255, 42, 28, 0),
+                      color: colormain[800],
                     ),
                   ),
                 )

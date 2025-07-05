@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:general_knowledge_app/providers/playerprovider.dart';
 import 'package:general_knowledge_app/providers/quizProvider.dart';
+import 'package:general_knowledge_app/views/shared/colors.dart';
 import 'package:general_knowledge_app/views/shared/popUps/correctPopUp.dart';
 import 'package:general_knowledge_app/views/shared/popUps/heartPopUp.dart';
 import 'package:general_knowledge_app/views/shared/popUps/incorrectPopUp.dart';
@@ -83,18 +84,18 @@ class ConfirmButton extends StatelessWidget {
           gradient: LinearGradient(
             colors:
                 provider.canEnter()
-                    ? [Colors.black, const Color.fromARGB(255, 22, 0, 0)]
+                    ? [colormain[900]!, colormain[700]!]
                     : [Colors.transparent, Colors.transparent],
           ),
           borderRadius: BorderRadius.circular(4),
-          border: Border.all(color: Colors.black, width: 2),
+          border: Border.all(color: colormain[900]!, width: 2),
         ),
         child: SubTitleText(
           text: 'تأكيد',
           size: 22,
           weight: FontWeight.bold,
           align: TextAlign.center,
-          color: provider.canEnter() ? Colors.white : Colors.black,
+          color: provider.canEnter() ? Colors.white : colorText,
         ),
       ),
     );

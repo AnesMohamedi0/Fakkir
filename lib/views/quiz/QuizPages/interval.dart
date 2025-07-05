@@ -6,6 +6,7 @@ import 'package:general_knowledge_app/providers/quizProvider.dart';
 import 'package:general_knowledge_app/views/quiz/confirmButton.dart';
 import 'package:general_knowledge_app/views/quiz/getHintButton.dart';
 import 'package:general_knowledge_app/views/quiz/getSolutionButton.dart';
+import 'package:general_knowledge_app/views/shared/colors.dart';
 import 'package:general_knowledge_app/views/shared/someviews.dart';
 import 'package:provider/provider.dart';
 
@@ -53,7 +54,7 @@ class _IntervalPageState extends State<IntervalPage> {
                       icon: Icon(
                         Icons.add,
                         size: height * 0.03,
-                        color: Colors.black,
+                        color: colorTextDark,
                       ),
                     ),
                     Container(
@@ -74,7 +75,7 @@ class _IntervalPageState extends State<IntervalPage> {
                       icon: Icon(
                         Icons.remove,
                         size: height * 0.03,
-                        color: Colors.black,
+                        color: colorTextDark,
                       ),
                     ),
                   ],
@@ -101,10 +102,7 @@ class _IntervalPageState extends State<IntervalPage> {
                 return Container(
                   width: width,
                   alignment: Alignment.center,
-                  child: NumbersText(
-                    text: '[$min - $max]',
-                    color: Colors.black54,
-                  ),
+                  child: NumbersText(text: '[$min - $max]', color: colorText),
                 );
               },
             ),
@@ -201,7 +199,7 @@ class _IntervalPageState extends State<IntervalPage> {
                             selected: provider.selected,
                             end: provider.minInterval,
                             start: provider.maxInterval,
-                            color: const Color.fromARGB(250, 105, 0, 0),
+                            color: colormain[400]!,
                             hint: provider.hint,
                             hintMargin: provider.hintMargin,
                           ),

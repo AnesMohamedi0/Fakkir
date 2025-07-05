@@ -1,10 +1,7 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:general_knowledge_app/database/assetMapRepo.dart';
-import 'package:general_knowledge_app/database/mapRepo.dart';
-import 'package:general_knowledge_app/database/levelRepo.dart';
 import 'package:general_knowledge_app/models/MapAsset.dart';
-import 'package:general_knowledge_app/models/level.dart';
 
 class AssetsProvider extends ChangeNotifier {
   List<MapAsset> assets = [];

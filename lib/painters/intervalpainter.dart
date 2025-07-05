@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:general_knowledge_app/views/shared/colors.dart';
 
 class IntervalPainter extends CustomPainter {
   final double start;
@@ -19,14 +20,14 @@ class IntervalPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    final paint = Paint()..color = const Color.fromARGB(255, 0, 0, 0);
+    final paint = Paint()..color = colorTextDark;
     final rect = Rect.fromLTWH(0, 0, size.width, size.height);
     canvas.drawRect(rect, paint);
 
     canvas.saveLayer(rect, paint);
     canvas.clipRect(rect);
     if (hint != null && hintMargin != null) {
-      final hintpaint = Paint()..color = Colors.amber.shade900;
+      final hintpaint = Paint()..color = colormain[100]!;
 
       final double leftFraction =
           ((hint! - hintMargin!) - start) / (end - start);

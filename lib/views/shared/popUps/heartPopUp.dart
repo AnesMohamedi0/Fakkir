@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:general_knowledge_app/painters/popUpPainter.dart';
 import 'package:general_knowledge_app/providers/playerprovider.dart';
+import 'package:general_knowledge_app/views/shared/colors.dart';
 import 'package:general_knowledge_app/views/shared/playerViews.dart';
 import 'package:general_knowledge_app/views/shared/popUps/usingCoinsPopUp.dart';
 import 'package:general_knowledge_app/views/shared/someviews.dart';
@@ -190,12 +191,7 @@ class _HeartPopUpState extends State<HeartPopUp> {
                                         left: 0,
                                         child: Icon(
                                           Icons.add,
-                                          color: const Color.fromARGB(
-                                            255,
-                                            32,
-                                            31,
-                                            0,
-                                          ),
+                                          color: colorText,
                                           size: height * 0.024,
                                         ),
                                       ),

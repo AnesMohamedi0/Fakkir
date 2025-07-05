@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:general_knowledge_app/views/shared/colors.dart';
 import 'package:general_knowledge_app/views/shared/someviews.dart';
 
 // ignore: must_be_immutable
@@ -30,17 +31,14 @@ class ProgressBarDisplay extends StatelessWidget {
                 text: "$max/",
                 size: 0.212 * (size ?? height * 0.08),
                 weight: FontWeight.w700,
-                color:
-                    progress / max < 0.5
-                        ? Colors.red.shade900
-                        : progress / max < 0.8
-                        ? Colors.amber.shade900
-                        : Colors.green.shade900,
+                color: colorText,
               ),
+              SizedBox(width: height * 0.002),
               SubTitleText(
                 text: progress.toString(),
                 size: 0.337 * (size ?? (height) * 0.08),
-                weight: FontWeight.w700,
+                weight: FontWeight.w800,
+                color: colorTextDark,
               ),
             ],
           ),
@@ -49,20 +47,10 @@ class ProgressBarDisplay extends StatelessWidget {
             width: size ?? height * 0.08,
             child: CircularProgressIndicator(
               value: progress / max,
-              backgroundColor:
-                  progress / max < 0.5
-                      ? Colors.red.shade200
-                      : progress / max < 0.8
-                      ? Colors.amber.shade200
-                      : Colors.green.shade200,
-              color:
-                  progress / max < 0.5
-                      ? Colors.red.shade700
-                      : progress / max < 0.8
-                      ? Colors.amber.shade700
-                      : Colors.green.shade700,
+              backgroundColor: colormain[200],
+              color: color1,
 
-              strokeWidth: 0.11 * (size ?? height * 0.08),
+              strokeWidth: 9,
             ),
           ),
         ],

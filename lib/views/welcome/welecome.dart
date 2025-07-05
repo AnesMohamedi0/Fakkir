@@ -4,6 +4,7 @@ import 'package:general_knowledge_app/painters/selectionpainter.dart';
 import 'package:general_knowledge_app/providers/mapProvider.dart';
 import 'package:general_knowledge_app/views/home/homePage.dart';
 import 'package:general_knowledge_app/views/shared/animatedBackground.dart';
+import 'package:general_knowledge_app/views/shared/colors.dart';
 import 'package:general_knowledge_app/views/shared/menuButton.dart';
 import 'package:general_knowledge_app/views/shared/someviews.dart';
 import 'package:path/path.dart';
@@ -173,7 +174,7 @@ class _WelecomePageState extends State<WelecomePage> {
                               },
                               child: OptionsText(
                                 text: 'تحدي مفتوح',
-                                color: const Color.fromARGB(255, 108, 47, 0),
+                                color: colorText,
                                 size: height * 0.05,
                                 weight: FontWeight.w500,
                               ),
@@ -221,12 +222,7 @@ class _WelecomePageState extends State<WelecomePage> {
                                                 .read<MapProvider>()
                                                 .getMapById(currentMapId!)
                                                 .name,
-                                    color: const Color.fromARGB(
-                                      255,
-                                      108,
-                                      47,
-                                      0,
-                                    ),
+                                    color: colorText,
                                   ),
                                 ],
                               ),
@@ -269,7 +265,7 @@ class _WelecomePageState extends State<WelecomePage> {
                               },
                               child: OptionsText(
                                 text: 'طور المغامرة',
-                                color: const Color.fromARGB(255, 108, 47, 0),
+                                color: colorText,
                                 size: height * 0.05,
                                 weight: FontWeight.w500,
                               ),

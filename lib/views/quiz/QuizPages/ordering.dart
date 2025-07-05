@@ -5,6 +5,7 @@ import 'package:general_knowledge_app/providers/quizProvider.dart';
 import 'package:general_knowledge_app/views/quiz/confirmButton.dart';
 import 'package:general_knowledge_app/views/quiz/getHintButton.dart';
 import 'package:general_knowledge_app/views/quiz/getSolutionButton.dart';
+import 'package:general_knowledge_app/views/shared/colors.dart';
 import 'package:general_knowledge_app/views/shared/someviews.dart';
 import 'package:provider/provider.dart';
 
@@ -63,18 +64,13 @@ class _OrderingPageState extends State<OrderingPage> {
                                   horizontal: width * 0.03,
                                 ),
                                 decoration: BoxDecoration(
-                                  color: const Color.fromARGB(
-                                    255,
-                                    255,
-                                    255,
-                                    254,
-                                  ),
+                                  color: colormain[50],
                                   borderRadius: BorderRadius.circular(
                                     height * 0.012,
                                   ),
                                   border: Border.all(
-                                    color: Colors.black,
-                                    width: 2,
+                                    color: colorTextDark,
+                                    width: 2.5,
                                   ),
                                 ),
                                 child: SubTitleText(
@@ -88,24 +84,22 @@ class _OrderingPageState extends State<OrderingPage> {
                             childWhenDragging: null,
                             child: DragTarget<String>(
                               onWillAcceptWithDetails: (details) {
-                                Future.delayed(Duration(milliseconds: 100), () {
-                                  provider.targetIndex = index;
+                                provider.targetIndex = index;
 
-                                  if (provider.isRepositioning) {
-                                    provider.updateTempPosition(
-                                      provider.selectedItem!,
-                                      index,
-                                    );
-                                  } else {
-                                    provider.startRepositioning(
-                                      provider.input[index],
-                                    );
-                                    provider.updateTempPosition(
-                                      provider.input[index],
-                                      index,
-                                    );
-                                  }
-                                });
+                                if (provider.isRepositioning) {
+                                  provider.updateTempPosition(
+                                    provider.selectedItem!,
+                                    index,
+                                  );
+                                } else {
+                                  provider.startRepositioning(
+                                    provider.input[index],
+                                  );
+                                  provider.updateTempPosition(
+                                    provider.input[index],
+                                    index,
+                                  );
+                                }
 
                                 return true;
                               },
@@ -152,24 +146,14 @@ class _OrderingPageState extends State<OrderingPage> {
                                                               index)
                                                   ? Colors.teal.shade500
                                                   : index % 2 == 0
-                                                  ? const Color.fromARGB(
-                                                    255,
-                                                    255,
-                                                    237,
-                                                    165,
-                                                  )
-                                                  : const Color.fromARGB(
-                                                    255,
-                                                    255,
-                                                    221,
-                                                    97,
-                                                  ),
+                                                  ? colormain[100]
+                                                  : colormain[200],
                                           borderRadius: BorderRadius.circular(
                                             height * 0.012,
                                           ),
                                           border: Border.all(
-                                            color: Colors.black,
-                                            width: 2,
+                                            color: colorTextDark,
+                                            width: 2.5,
                                           ),
                                         ),
                                         child: SubTitleText(
@@ -195,7 +179,7 @@ class _OrderingPageState extends State<OrderingPage> {
                                             right: width * 0.004,
                                           ),
                                           decoration: BoxDecoration(
-                                            color: Colors.black,
+                                            color: colorTextDark,
                                             shape: BoxShape.circle,
                                           ),
                                           child: NumbersText(

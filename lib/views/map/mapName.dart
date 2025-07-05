@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:general_knowledge_app/providers/mapProvider.dart';
+import 'package:general_knowledge_app/views/shared/colors.dart';
 import 'package:general_knowledge_app/views/shared/someviews.dart';
 import 'package:provider/provider.dart';
 
@@ -28,6 +29,7 @@ class MapNameDisplay extends StatelessWidget {
                   text: map.name,
                   size: height * 0.028,
                   weight: FontWeight.w600,
+                  color: colorTextDark,
                 ),
               ],
             ),

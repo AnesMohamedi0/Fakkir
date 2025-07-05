@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:general_knowledge_app/providers/playerprovider.dart';
+import 'package:general_knowledge_app/views/shared/colors.dart';
 import 'package:provider/provider.dart';
 
 class MenuButton extends StatelessWidget {
@@ -16,7 +17,7 @@ class MenuButton extends StatelessWidget {
         icon: Icon(
           Icons.menu,
           size: height * 0.045,
-          color: Colors.black,
+          color: colorTextDark,
           weight: 800,
         ),
         onPressed: () {

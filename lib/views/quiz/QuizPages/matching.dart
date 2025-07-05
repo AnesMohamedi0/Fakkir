@@ -151,6 +151,7 @@ class _MatchingPageState extends State<MatchingPage> {
                                   text: provider.options[index],
                                   size: height * 0.023,
                                   weight: FontWeight.w600,
+                                  color: Colors.black,
                                 ),
                               ),
                             );

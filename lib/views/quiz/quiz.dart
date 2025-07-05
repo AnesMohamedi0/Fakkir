@@ -11,6 +11,7 @@ import 'package:general_knowledge_app/models/quiz/optionsQuiz.dart';
 import 'package:general_knowledge_app/models/quiz/orderingQuiz.dart';
 import 'package:general_knowledge_app/providers/quizProvider.dart';
 import 'package:general_knowledge_app/views/shared/animatedBackground.dart';
+import 'package:general_knowledge_app/views/shared/colors.dart';
 import 'package:general_knowledge_app/views/shared/heartCoinBar.dart';
 import 'package:general_knowledge_app/views/shared/menuButton.dart';
 import 'package:general_knowledge_app/views/quiz/categorydisplay.dart';
@@ -82,6 +83,7 @@ class _QuizPageState extends State<QuizPage> {
                                   text: provider.level!.name,
                                   size: height * 0.034,
                                   weight: FontWeight.w600,
+                                  color: colorTextDark,
                                 ),
                               ],
                             ),
@@ -100,6 +102,7 @@ class _QuizPageState extends State<QuizPage> {
                                       text: provider.map!.name,
                                       size: height * 0.020,
                                       weight: FontWeight.w600,
+                                      color: colorTextDark,
                                     ),
                                   ],
                                 ),

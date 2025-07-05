@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:general_knowledge_app/painters/popUpPainter.dart';
+import 'package:general_knowledge_app/views/shared/colors.dart';
 import 'package:general_knowledge_app/views/shared/popUps/plusCoinsminusHeart.dart';
 import 'package:general_knowledge_app/views/shared/someviews.dart';
 
@@ -57,7 +58,7 @@ class _DailyCoinsPopUpState extends State<DailyCoinsPopUp> {
                       child: SubTitleText(
                         text: 'لقد حصلت على ${widget.coins} عملة يومية!',
                         size: height * 0.035,
-                        color: Colors.black,
+                        color: colorText,
                         align: TextAlign.center,
                       ),
                     ),

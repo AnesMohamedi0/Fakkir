@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:general_knowledge_app/providers/playerprovider.dart';
+import 'package:general_knowledge_app/views/shared/colors.dart';
 import 'package:general_knowledge_app/views/shared/popUps/heartPopUp.dart';
 import 'package:general_knowledge_app/views/shared/someviews.dart';
 import 'package:provider/provider.dart';
@@ -105,7 +106,12 @@ class CoinsContainer extends StatelessWidget {
           Positioned(
             top: height * -0.0034,
             right: width * 0.05,
-            child: NumbersText(text: coins.toString(), size: height * 0.017),
+            child: NumbersText(
+              text: coins.toString(),
+              size: height * 0.017,
+              color: colorTextDark,
+              weight: FontWeight.w500,
+            ),
           ),
         ],
       ),

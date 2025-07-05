@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:general_knowledge_app/models/level.dart';
+import 'package:general_knowledge_app/views/shared/colors.dart';
 
 class LevelNodeBackground extends StatelessWidget {
   final Level item;
@@ -17,13 +18,7 @@ class LevelNodeBackground extends StatelessWidget {
                 ? const Color.fromARGB(255, 222, 184, 135)
                 : const Color.fromARGB(255, 255, 248, 220),
         borderRadius: BorderRadius.circular(20),
-        border: Border.all(
-          width: height * 0.003,
-          color:
-              !item.isOpen
-                  ? const Color.fromARGB(255, 205, 133, 63)
-                  : const Color.fromARGB(255, 218, 165, 32),
-        ),
+        border: Border.all(width: height * 0.003, color: color1),
       ),
     );
   }

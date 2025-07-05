@@ -1,5 +1,7 @@
 import 'dart:ui';
 
+import 'package:flutter/material.dart';
+
 List<Color> colorsMain = [
   Color.fromARGB(255, 255, 246, 235),
   Color.fromARGB(255, 255, 248, 236),
@@ -61,3 +63,21 @@ List<Color> color2_6 = [
   Color.fromARGB(0, 238, 165, 76),
   Color.fromARGB(155, 238, 165, 76),
 ];
+
+Color color1 = const Color.fromARGB(255, 139, 69, 19);
+Color color2 = const Color.fromARGB(55, 139, 69, 19);
+Color colorTextDark = const Color.fromARGB(255, 63, 26, 1);
+Color colorText = const Color.fromARGB(255, 77, 35, 5);
+
+const MaterialColor colormain = MaterialColor(0xFF8B4513, <int, Color>{
+  50: Color(0xFFFAEDE4),
+  100: Color(0xFFF2D4BF),
+  200: Color(0xFFE9B894),
+  300: Color(0xFFDF9C69),
+  400: Color(0xFFD78548),
+  500: Color(0xFF8B4513), // Base color
+  600: Color(0xFF7E3E11),
+  700: Color(0xFF6F360F),
+  800: Color(0xFF612E0D),
+  900: Color(0xFF4C210A),
+});

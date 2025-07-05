@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:general_knowledge_app/models/level.dart';
 import 'package:sqflite/sqflite.dart';
 
@@ -8,7 +6,6 @@ Future<void> initGameMapAssets(Database db) async {
   await insertMapAssets(2, [2, 7, 3], db);
   await insertMapAssets(3, [1, 3, 4], db);
   await insertMapAssets(4, [5, 4, 2], db);
-  print("✅ All game map assets inserted");
 }
 
 Future<void> insertMapAssets(int mapId, List<int> assetIds, Database db) async {
@@ -21,11 +18,7 @@ Future<void> insertMapAssets(int mapId, List<int> assetIds, Database db) async {
   final List<Level> levelList =
       levels.map((map) => Level.fromMap(map)).toList();
 
-  // ✅ Ensure there are enough levels
   if (levelList.length <= 8) {
-    print(
-      "❌ Not enough levels for mapId=$mapId. Found only ${levelList.length} levels. Skipping asset insert.",
-    );
     return;
   }
 
@@ -42,14 +35,14 @@ Future<void> insertMapAssets(int mapId, List<int> assetIds, Database db) async {
     'mapId': mapId,
     'assetId': assetIds[0],
     'posX': x1,
-    'posY': l1.posY - 10,
+    'posY': l1.posY - 15,
   }, conflictAlgorithm: ConflictAlgorithm.replace);
 
   await db.insert('GameMapAsset', {
     'mapId': mapId,
     'assetId': assetIds[1],
     'posX': x2,
-    'posY': l2.posY,
+    'posY': l2.posY - 7,
   }, conflictAlgorithm: ConflictAlgorithm.replace);
 
   await db.insert('GameMapAsset', {

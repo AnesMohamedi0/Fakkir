@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:general_knowledge_app/models/level.dart';
+import 'package:general_knowledge_app/views/shared/colors.dart';
 
 class LevelIconsDisplay extends StatelessWidget {
   final Level item;
@@ -17,10 +18,7 @@ class LevelIconsDisplay extends StatelessWidget {
         child: Icon(
           !item.isOpen ? Icons.lock : Icons.star,
           size: height * 0.03,
-          color:
-              !item.isOpen
-                  ? const Color.fromARGB(255, 139, 69, 19)
-                  : Colors.amber.shade900,
+          color: !item.isOpen ? color1 : const Color.fromARGB(255, 187, 96, 31),
 
           shadows: [
             Shadow(
