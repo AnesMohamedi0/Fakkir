@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:general_knowledge_app/painters/popUpPainter.dart';
+import 'package:general_knowledge_app/views/shared/colors.dart';
 import 'package:general_knowledge_app/views/shared/someviews.dart';
 
 class LockedPopUp extends StatefulWidget {
@@ -38,7 +39,7 @@ class _LockedPopUpState extends State<LockedPopUp> {
                   child: Icon(
                     Icons.lock,
                     size: height * 0.185,
-                    color: const Color.fromARGB(255, 42, 28, 0),
+                    color: colorText,
                   ),
                 ),
               ),

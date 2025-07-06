@@ -17,7 +17,11 @@ class IntervalPage extends StatefulWidget {
   State<IntervalPage> createState() => _IntervalPageState();
 }
 
-class _IntervalPageState extends State<IntervalPage> {
+class _IntervalPageState extends State<IntervalPage>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+  late Animation<double> _opacityAnimation;
+
   @override
   void initState() {
     var quiz = (context.read<QuizProvider>().quiz! as IntervalQuiz);
@@ -25,6 +29,21 @@ class _IntervalPageState extends State<IntervalPage> {
     context.read<IntervalProvider>().setMinInterval(quiz.minInterval);
     context.read<IntervalProvider>().setMaxInterval(quiz.maxInterval);
     context.read<IntervalProvider>().setMargin(quiz.margin);
+
+    _controller = AnimationController(
+      duration: const Duration(milliseconds: 300),
+      vsync: this,
+    );
+
+    _opacityAnimation = CurvedAnimation(
+      parent: _controller,
+      curve: Curves.easeInOut,
+    );
+
+    Future.delayed(Duration(milliseconds: 500), () {
+      _controller.forward();
+    });
+
     super.initState();
   }
 
@@ -212,22 +231,30 @@ class _IntervalPageState extends State<IntervalPage> {
               SizedBox(height: height * 0.03),
               Consumer<IntervalProvider>(
                 builder: (context, provider, _) {
-                  return Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [ConfirmButton(provider: provider)],
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          GetHintButton(provider: provider),
-                          SizedBox(width: width * 0.015),
-                          GetSolutionButton(provider: provider),
-                        ],
-                      ),
-                    ],
+                  return AnimatedBuilder(
+                    animation: _opacityAnimation,
+                    builder: (context, child) {
+                      return Opacity(
+                        opacity: _opacityAnimation.value,
+                        child: child,
+                      );
+                    },
+                    child: Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [ConfirmButton(provider: provider)],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            GetHintButton(provider: provider),
+                            SizedBox(width: width * 0.015),
+                            GetSolutionButton(provider: provider),
+                          ],
+                        ),
+                      ],
+                    ),
                   );
                 },
               ),

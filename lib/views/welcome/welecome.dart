@@ -175,7 +175,7 @@ class _WelecomePageState extends State<WelecomePage> {
                               child: OptionsText(
                                 text: 'تحدي مفتوح',
                                 color: colorText,
-                                size: height * 0.05,
+                                size: height * 0.06,
                                 weight: FontWeight.w500,
                               ),
                             ),
@@ -207,13 +207,13 @@ class _WelecomePageState extends State<WelecomePage> {
                           ),
 
                           Positioned(
-                            top: height * 0.12,
-                            left: width * 0.16,
+                            top: height * 0.122,
+                            left: width * 0.22,
                             child: SizedBox(
                               child: Row(
                                 children: [
-                                  SubTitleText(
-                                    size: height * 0.02,
+                                  HudhudText(
+                                    size: height * 0.023,
                                     weight: FontWeight.w500,
                                     text:
                                         currentMapId == null
@@ -266,7 +266,7 @@ class _WelecomePageState extends State<WelecomePage> {
                               child: OptionsText(
                                 text: 'طور المغامرة',
                                 color: colorText,
-                                size: height * 0.05,
+                                size: height * 0.06,
                                 weight: FontWeight.w500,
                               ),
                             ),

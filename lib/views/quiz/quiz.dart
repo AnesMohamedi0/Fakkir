@@ -98,10 +98,10 @@ class _QuizPageState extends State<QuizPage> {
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    SubTitleText(
+                                    HudhudText(
                                       text: provider.map!.name,
-                                      size: height * 0.020,
-                                      weight: FontWeight.w600,
+                                      size: height * 0.022,
+                                      weight: FontWeight.w500,
                                       color: colorTextDark,
                                     ),
                                   ],

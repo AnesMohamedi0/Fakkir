@@ -126,9 +126,9 @@ class _HomePageState extends State<HomePage> {
                   child: Container(
                     width: width,
                     alignment: Alignment.center,
-                    child: SubTitleText(
+                    child: HudhudText(
                       text: "قائمة الخرائط",
-                      size: height * 0.030,
+                      size: height * 0.0450,
                       weight: FontWeight.w500,
                     ),
                   ),

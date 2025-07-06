@@ -16,13 +16,30 @@ class CompletePage extends StatefulWidget {
   State<CompletePage> createState() => _CompletePageState();
 }
 
-class _CompletePageState extends State<CompletePage> {
+class _CompletePageState extends State<CompletePage>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+  late Animation<double> _opacityAnimation;
+
   @override
   void initState() {
     context.read<CompleteProvider>().setAnswer(
       (context.read<QuizProvider>().quiz! as CompleteQuiz).answer,
     );
     super.initState();
+    _controller = AnimationController(
+      duration: const Duration(milliseconds: 300),
+      vsync: this,
+    );
+
+    _opacityAnimation = CurvedAnimation(
+      parent: _controller,
+      curve: Curves.easeInOut,
+    );
+
+    Future.delayed(Duration(milliseconds: 500), () {
+      _controller.forward();
+    });
   }
 
   @override
@@ -154,17 +171,30 @@ class _CompletePageState extends State<CompletePage> {
                     ),
 
                     SizedBox(height: height * 0.03),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [ConfirmButton(provider: provider)],
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        GetHintButton(provider: provider),
-                        SizedBox(width: width * 0.015),
-                        GetSolutionButton(provider: provider),
-                      ],
+                    AnimatedBuilder(
+                      animation: _opacityAnimation,
+                      builder: (context, child) {
+                        return Opacity(
+                          opacity: _opacityAnimation.value,
+                          child: child,
+                        );
+                      },
+                      child: Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [ConfirmButton(provider: provider)],
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              GetHintButton(provider: provider),
+                              SizedBox(width: width * 0.015),
+                              GetSolutionButton(provider: provider),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),

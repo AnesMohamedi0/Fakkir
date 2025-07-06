@@ -292,9 +292,9 @@ class QuizPainter extends CustomPainter {
     path_0.lineTo(size.width * 0.0676375, size.height * 0.8009000);
     path_0.lineTo(size.width * 0.0640500, size.height * 0.7865250);
     path_0.lineTo(size.width * 0.0580625, size.height * 0.7985125);
-    path_0.lineTo(size.width * -0.0102500, size.height * 0.7985125);
-    path_0.lineTo(size.width * -0.1384125, size.height * 0.3510750);
-    path_0.lineTo(size.width * -0.0901625, size.height * 0.2193375);
+    path_0.lineTo(size.width * 0, size.height * 0.7985125);
+    path_0.lineTo(size.width * 0, size.height * 0.3510750);
+    path_0.lineTo(size.width * 0, size.height * 0.2193375);
     path_0.close();
 
     canvas.drawPath(path_0, paint_fill_0);

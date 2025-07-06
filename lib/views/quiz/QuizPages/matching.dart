@@ -15,7 +15,11 @@ class MatchingPage extends StatefulWidget {
   State<MatchingPage> createState() => _MatchingPageState();
 }
 
-class _MatchingPageState extends State<MatchingPage> {
+class _MatchingPageState extends State<MatchingPage>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+  late Animation<double> _opacityAnimation;
+
   @override
   void initState() {
     var quiz = (context.read<QuizProvider>().quiz! as MatchingQuiz);
@@ -24,6 +28,20 @@ class _MatchingPageState extends State<MatchingPage> {
     context.read<MatchingProvider>().setAnswers(quiz.answer);
 
     super.initState();
+
+    _controller = AnimationController(
+      duration: const Duration(milliseconds: 500),
+      vsync: this,
+    );
+
+    _opacityAnimation = CurvedAnimation(
+      parent: _controller,
+      curve: Curves.easeInOut,
+    );
+
+    Future.delayed(const Duration(milliseconds: 500), () {
+      _controller.forward();
+    });
   }
 
   Color getColor(int index) {
@@ -164,22 +182,30 @@ class _MatchingPageState extends State<MatchingPage> {
                 SizedBox(height: height * 0.03),
                 Consumer<MatchingProvider>(
                   builder: (context, provider, _) {
-                    return Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [ConfirmButton(provider: provider)],
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            GetHintButton(provider: provider),
-                            SizedBox(width: width * 0.015),
-                            GetSolutionButton(provider: provider),
-                          ],
-                        ),
-                      ],
+                    return AnimatedBuilder(
+                      animation: _opacityAnimation,
+                      builder: (context, child) {
+                        return Opacity(
+                          opacity: _opacityAnimation.value,
+                          child: child,
+                        );
+                      },
+                      child: Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [ConfirmButton(provider: provider)],
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              GetHintButton(provider: provider),
+                              SizedBox(width: width * 0.015),
+                              GetSolutionButton(provider: provider),
+                            ],
+                          ),
+                        ],
+                      ),
                     );
                   },
                 ),

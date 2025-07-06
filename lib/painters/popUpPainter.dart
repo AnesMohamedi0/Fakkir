@@ -252,7 +252,7 @@ class PopUpPainter extends CustomPainter {
     canvas.restore();
     final borderPaint =
         Paint()
-          ..color = const Color.fromARGB(255, 139, 69, 19) // Border color
+          ..color = const Color.fromARGB(255, 83, 35, 1) // Border color
           ..style = PaintingStyle.stroke
           ..strokeWidth = 3.0;
     canvas.drawPath(path_0, borderPaint);

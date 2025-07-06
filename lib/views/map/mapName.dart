@@ -25,10 +25,10 @@ class MapNameDisplay extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SubTitleText(
+                HudhudText(
                   text: map.name,
-                  size: height * 0.028,
-                  weight: FontWeight.w600,
+                  size: height * 0.038,
+                  weight: FontWeight.w500,
                   color: colorTextDark,
                 ),
               ],
