@@ -1,11 +1,25 @@
+import 'dart:convert';
+
+import 'package:flutter/services.dart';
 import 'package:general_knowledge_app/models/level.dart';
 import 'package:sqflite/sqflite.dart';
 
 Future<void> initGameMapAssets(Database db) async {
-  await insertMapAssets(1, [2, 6, 5], db);
-  await insertMapAssets(2, [2, 7, 3], db);
-  await insertMapAssets(3, [1, 3, 4], db);
-  await insertMapAssets(4, [5, 4, 2], db);
+  initFromJson(db);
+}
+
+Future<void> initFromJson(Database db) async {
+  print('inserting map assets');
+  var reponse = await rootBundle.loadString('assets/json/assetmap.json');
+  var data = jsonDecode(reponse);
+
+  for (var element in data) {
+    await insertMapAssets(
+      element['mapId'] as int,
+      List<int>.from(element['assetIds']),
+      db,
+    );
+  }
 }
 
 Future<void> insertMapAssets(int mapId, List<int> assetIds, Database db) async {

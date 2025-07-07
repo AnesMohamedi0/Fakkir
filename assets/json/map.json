@@ -1,0 +1,308 @@
+[
+  {
+    "id": 1,
+    "name": "المغرب العربي",
+    "isOpen": true,
+    "isDone": false,
+    "mapBeforeId": null,
+    "difficulty": 1,
+    "progress": 0
+  },
+  {
+    "id": 2,
+    "name": "مصر والسودان",
+    "isOpen": false,
+    "isDone": false,
+    "mapBeforeId": null,
+    "difficulty": 3,
+    "progress": 0
+  },
+  {
+    "id": 3,
+    "name": "الخليج العربي",
+    "isOpen": false,
+    "isDone": false,
+    "mapBeforeId": null,
+    "difficulty": 8,
+    "progress": 0
+  },
+  {
+    "id": 4,
+    "name": "بلاد الشام",
+    "isOpen": false,
+    "isDone": false,
+    "mapBeforeId": null,
+    "difficulty": 11,
+    "progress": 0
+  },
+  {
+    "id": 5,
+    "name": "منطقة شرق المتوسط",
+    "isOpen": false,
+    "isDone": false,
+    "mapBeforeId": null,
+    "difficulty": 14,
+    "progress": 0
+  },
+  {
+    "id": 6,
+    "name": "منطقة البلقان",
+    "isOpen": false,
+    "isDone": false,
+    "mapBeforeId": null,
+    "difficulty": 16,
+    "progress": 0
+  },
+  {
+    "id": 7,
+    "name": "جنوب أوروبا",
+    "isOpen": false,
+    "isDone": false,
+    "mapBeforeId": null,
+    "difficulty": 18,
+    "progress": 0
+  },
+  {
+    "id": 8,
+    "name": "غرب أوروبا",
+    "isOpen": false,
+    "isDone": false,
+    "mapBeforeId": null,
+    "difficulty": 23,
+    "progress": 0
+  },
+  {
+    "id": 9,
+    "name": "وسط أوروبا",
+    "isOpen": false,
+    "isDone": false,
+    "mapBeforeId": null,
+    "difficulty": 26,
+    "progress": 0
+  },
+  {
+    "id": 10,
+    "name": "الجزر البريطانية",
+    "isOpen": false,
+    "isDone": false,
+    "mapBeforeId": null,
+    "difficulty": 28,
+    "progress": 0
+  },
+  {
+    "id": 11,
+    "name": "منطقة البلطيق",
+    "isOpen": false,
+    "isDone": false,
+    "mapBeforeId": null,
+    "difficulty": 31,
+    "progress": 0
+  },
+  {
+    "id": 12,
+    "name": "أوروبا الشرقية",
+    "isOpen": false,
+    "isDone": false,
+    "mapBeforeId": null,
+    "difficulty": 33,
+    "progress": 0
+  },
+  {
+    "id": 13,
+    "name": "منطقة القوقاز",
+    "isOpen": false,
+    "isDone": false,
+    "mapBeforeId": null,
+    "difficulty": 36,
+    "progress": 0
+  },
+  {
+    "id": 14,
+    "name": "بلاد فارس",
+    "isOpen": false,
+    "isDone": false,
+    "mapBeforeId": null,
+    "difficulty": 38,
+    "progress": 0
+  },
+  {
+    "id": 15,
+    "name": "آسيا الوسطى",
+    "isOpen": false,
+    "isDone": false,
+    "mapBeforeId": null,
+    "difficulty": 41,
+    "progress": 0
+  },
+  {
+    "id": 16,
+    "name": "شبه القارة الهندية",
+    "isOpen": false,
+    "isDone": false,
+    "mapBeforeId": null,
+    "difficulty": 43,
+    "progress": 0
+  },
+  {
+    "id": 17,
+    "name": "شرق آسيا",
+    "isOpen": false,
+    "isDone": false,
+    "mapBeforeId": null,
+    "difficulty": 46,
+    "progress": 0
+  },
+  {
+    "id": 18,
+    "name": "روسيا وسيبيريا",
+    "isOpen": false,
+    "isDone": false,
+    "mapBeforeId": null,
+    "difficulty": 48,
+    "progress": 0
+  },
+  {
+    "id": 19,
+    "name": "أمريكا الشمالية",
+    "isOpen": false,
+    "isDone": false,
+    "mapBeforeId": null,
+    "difficulty": 51,
+    "progress": 0
+  },
+  {
+    "id": 20,
+    "name": "الولايات المتحدة الأمريكية",
+    "isOpen": false,
+    "isDone": false,
+    "mapBeforeId": null,
+    "difficulty": 53,
+    "progress": 0
+  },
+  {
+    "id": 21,
+    "name": "أمريكا الوسطى والمكسيك",
+    "isOpen": false,
+    "isDone": false,
+    "mapBeforeId": null,
+    "difficulty": 56,
+    "progress": 0
+  },
+  {
+    "id": 22,
+    "name": "منطقة الكاريبي",
+    "isOpen": false,
+    "isDone": false,
+    "mapBeforeId": null,
+    "difficulty": 58,
+    "progress": 0
+  },
+  {
+    "id": 23,
+    "name": "منطقة غويانا",
+    "isOpen": false,
+    "isDone": false,
+    "mapBeforeId": null,
+    "difficulty": 61,
+    "progress": 0
+  },
+  {
+    "id": 24,
+    "name": "البرازيل",
+    "isOpen": false,
+    "isDone": false,
+    "mapBeforeId": null,
+    "difficulty": 63,
+    "progress": 0
+  },
+  {
+    "id": 25,
+    "name": "أمريكا اللاتينية",
+    "isOpen": false,
+    "isDone": false,
+    "mapBeforeId": null,
+    "difficulty": 66,
+    "progress": 0
+  },
+  {
+    "id": 26,
+    "name": "غرب أفريقيا",
+    "isOpen": false,
+    "isDone": false,
+    "mapBeforeId": null,
+    "difficulty": 68,
+    "progress": 0
+  },
+  {
+    "id": 27,
+    "name": "منطقة الصحراء الكبرى",
+    "isOpen": false,
+    "isDone": false,
+    "mapBeforeId": null,
+    "difficulty": 71,
+    "progress": 0
+  },
+  {
+    "id": 28,
+    "name": "وسط أفريقيا",
+    "isOpen": false,
+    "isDone": false,
+    "mapBeforeId": null,
+    "difficulty": 73,
+    "progress": 0
+  },
+  {
+    "id": 29,
+    "name": "شرق أفريقيا",
+    "isOpen": false,
+    "isDone": false,
+    "mapBeforeId": null,
+    "difficulty": 76,
+    "progress": 0
+  },
+  {
+    "id": 30,
+    "name": "جنوب أفريقيا",
+    "isOpen": false,
+    "isDone": false,
+    "mapBeforeId": null,
+    "difficulty": 78,
+    "progress": 0
+  },
+  {
+    "id": 31,
+    "name": "جنوب آسيا",
+    "isOpen": false,
+    "isDone": false,
+    "mapBeforeId": null,
+    "difficulty": 81,
+    "progress": 0
+  },
+  {
+    "id": 32,
+    "name": "جنوب شرق آسيا",
+    "isOpen": false,
+    "isDone": false,
+    "mapBeforeId": null,
+    "difficulty": 83,
+    "progress": 0
+  },
+  {
+    "id": 33,
+    "name": "أوقيانوسيا",
+    "isOpen": false,
+    "isDone": false,
+    "mapBeforeId": null,
+    "difficulty": 86,
+    "progress": 0
+  },
+  {
+    "id": 34,
+    "name": "أنتاركتيكا",
+    "isOpen": false,
+    "isDone": false,
+    "mapBeforeId": null,
+    "difficulty": 88,
+    "progress": 0
+  }
+]

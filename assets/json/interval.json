@@ -1,0 +1,131 @@
+[
+  {
+    "id": 5,
+    "question": "ما هي المساحة الإجمالية لتونس بالكيلومتر المربع؟",
+    "imagePath": null,
+    "categoryId": 7,
+    "levelId": 105,
+    "minInterval": 100000.0,
+    "maxInterval": 250000.0,
+    "answer": 163610.0,
+    "margin": 10000.0
+  },
+  {
+   "id": 13,
+    "question": "ما هو طول نهر النيل بالكيلومتر؟",
+    "imagePath": null,
+    "categoryId": 12,
+    "levelId": 203,
+    "minInterval": 4000.0,
+    "maxInterval": 8000.0,
+    "answer": 6650.0,
+    "margin": 200.0
+  },
+  {
+    "id": 15,
+    "question": "متى انفصل جنوب السودان عن السودان؟",
+    "imagePath": null,
+    "categoryId": 11,
+    "levelId": 205,
+    "minInterval": 2000.0,
+    "maxInterval": 2025.0,
+    "answer": 2011.0,
+    "margin": 1.0
+  },
+  {
+    "id": 25,
+    "question": "في أي سنة بدأت حرب الخليج؟",
+    "imagePath": null,
+    "categoryId": 11,
+    "levelId": 305,
+    "minInterval": 1975.0,
+    "maxInterval": 2000.0,
+    "answer": 1990.0,
+    "margin": 1.0
+  },
+  {
+    "id": 30,
+    "question": "ما هو عدد سكان العراق (بالملايين نسمة)؟",
+    "imagePath": null,
+    "categoryId": 7,
+    "levelId": 310,
+    "minInterval": 30.0,
+    "maxInterval": 60.0,
+    "answer": 44.0,
+    "margin": 1.0
+  },
+  {
+    "id": 34,
+    "question": "ما هي المساحة الإجمالية لدول بلاد الشام مجتمعة (بالألف كيلومتر مربع)؟",
+    "imagePath": null,
+    "categoryId": 7,
+    "levelId": 404,
+    "minInterval": 250.0,
+    "maxInterval": 350.0,
+    "answer": 291.0,
+    "margin": 5.0
+  },
+  {
+    "id": 35,
+    "question": "كم سنة دامت الدولة الأموية؟",
+    "imagePath": null,
+    "categoryId": 11,
+    "levelId": 405,
+    "minInterval": 70.0,
+    "maxInterval": 100.0,
+    "answer": 89.0,
+    "margin": 2.0
+  }, {
+    "id": 45,
+    "question": "كم يبلغ عدد سكان تركيا (بالملايين)؟",
+    "imagePath": null,
+    "categoryId": 7,
+    "levelId": 505,
+    "minInterval": 70.0,
+    "maxInterval": 100.0,
+    "answer": 85.0,
+    "margin": 2.0
+  },
+  {
+    "id": 49,
+    "question": "في أي سنة سقطت الدولة العثمانية؟",
+    "imagePath": null,
+    "categoryId": 11,
+    "levelId": 509,
+    "minInterval": 1900.0,
+    "maxInterval": 1950.0,
+    "answer": 1924.0,
+    "margin": 1.0
+  }, {
+    "id": 56,
+    "question": "في أي سنة سقطت دولة يوغوسلافيا؟",
+    "imagePath": null,
+    "categoryId": 11,
+    "levelId": 606,
+    "minInterval": 1980.0,
+    "maxInterval": 2005.0,
+    "answer": 1992.0,
+    "margin": 1.0
+  }, {
+    "id": 61,
+    "question": "كم عدد سكان إيطاليا (بالملايين)؟",
+    "imagePath": null,
+    "categoryId": 7,
+    "levelId": 701,
+    "minInterval": 50.0,
+    "maxInterval": 100.0,
+    "answer": 59.0,
+    "margin": 2.0
+  },
+  {
+    "id": 66,
+    "question": "كم سنة دام الحكم الإسلامي في شبه الجزيرة الإيبيرية؟",
+    "imagePath": null,
+    "categoryId": 11,
+    "levelId": 706,
+    "minInterval": 600.0,
+    "maxInterval": 800.0,
+    "answer": 781.0,
+    "margin": 5.0
+  }
+]

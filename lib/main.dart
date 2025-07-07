@@ -14,7 +14,6 @@ import 'package:general_knowledge_app/providers/quiz/optionsProvider.dart';
 import 'package:general_knowledge_app/providers/quiz/orderingProvider.dart';
 import 'package:general_knowledge_app/providers/quiz/stickingProvider.dart';
 import 'package:general_knowledge_app/providers/quizProvider.dart';
-import 'package:general_knowledge_app/views/quiz/QuizPages/sticking.dart';
 import 'package:general_knowledge_app/views/shared/animatedBackground.dart';
 import 'package:general_knowledge_app/views/welcome/welecome.dart';
 import 'package:provider/provider.dart';

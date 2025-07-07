@@ -40,4 +40,16 @@ class StickingQuiz extends Quiz {
       options: List<String>.from(jsonDecode(map['options'])),
     );
   }
+
+  factory StickingQuiz.fromJson(Map<String, dynamic> json) {
+    return StickingQuiz(
+      id: json['id'] as int,
+      question: json['question'] as String,
+      imagePath: json['imagePath'] as String?,
+      categoryId: json['categoryId'] as int,
+      levelId: json['levelId'] as int,
+      answer: json['answer'] as String,
+      options: List<String>.from(json['options']),
+    );
+  }
 }

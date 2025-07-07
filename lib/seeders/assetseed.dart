@@ -1,19 +1,25 @@
+import 'dart:convert';
+
+import 'package:flutter/services.dart';
 import 'package:sqflite/sqflite.dart';
 
 Future<void> initAssets(Database db) async {
-  List<String> assets = [
-    'assets/images/MapAssets/lighthouse.png',
-    'assets/images/MapAssets/palmtree.png',
-    'assets/images/MapAssets/ship.png',
-    'assets/images/MapAssets/tree.png',
-    'assets/images/MapAssets/mount.png',
-    'assets/images/MapAssets/oasis.png',
-    'assets/images/MapAssets/snowforest.png',
-  ];
+  print('inserting assets');
+  List<String> assets = await LoadAssetsFromJson();
 
   for (var asset in assets) {
     await db.insert('asset', {
       'AssetPath': asset,
     }, conflictAlgorithm: ConflictAlgorithm.replace);
   }
+}
+
+Future<List<String>> LoadAssetsFromJson() async {
+  List<String> assets = [];
+  var reponse = await rootBundle.loadString('assets/json/asset.json');
+  var data = jsonDecode(reponse);
+  assets = List<String>.from(data);
+
+  print('added ${data.length} assets');
+  return assets;
 }

@@ -1,0 +1,137 @@
+[
+  {
+    "id": 6,
+    "question": "إلى أي دولة ينتمي هذا الشكل؟",
+    "imagePath": "assets/images/quizAssets/105.jpg",
+    "categoryId": 6,
+    "levelId": 106,
+    "answer": "ليبيا"
+  },
+  {
+    "id": 8,
+    "question": "ما هي أكثر مدينة سكانًا في منطقة المغرب العربي؟",
+    "imagePath": null,
+    "categoryId": 7,
+    "levelId": 108,
+    "answer": "الدار البيضاء"
+  },
+  {
+    "id": 10,
+    "question": "ما اسم الصحراء التي تغطي جزءًا كبيرًا من منطقة المغرب العربي؟",
+    "imagePath": null,
+    "categoryId": 1,
+    "levelId": 110,
+    "answer": "الصحراء الكبرى"
+  },
+  {
+    "id": 11,
+    "question": "ما هي عملة مصر؟",
+    "imagePath": null,
+    "categoryId": 9,
+    "levelId": 201,
+    "answer": "الجنيه المصري"
+  },
+  {
+    "id": 20,
+    "question": "ما اسم هذه المدينة التي تظهر على الخريطة؟",
+    "imagePath": "assets/images/quizAssets/210.jpg",
+    "categoryId": 2,
+    "levelId": 210,
+    "answer": "الإسكندرية"
+  },
+  {
+    "id": 23,
+    "question": "إلى أي مدينة ينتمي هذا المعلم: برج الساعة؟",
+    "imagePath": "assets/images/quizAssets/303.jpg",
+    "categoryId": 2,
+    "levelId": 303,
+    "answer": "مكة المكرمة"
+  },
+  {
+    "id": 29,
+    "question": "ما هي الدولة التي تقع في شبه الجزيرة العربية ولكن لا تُعد من دول الخليج العربي؟",
+    "imagePath": null,
+    "categoryId": 1,
+    "levelId": 309,
+    "answer": "اليمن"
+  },
+  {
+    "id": 32,
+    "question": "ما هي الإمبراطورية التي كانت مدينة دمشق عاصمتها؟",
+    "imagePath": null,
+    "categoryId": 11,
+    "levelId": 402,
+    "answer": "الدولة الأموية"
+  },
+  {
+    "id": 36,
+    "question": "ما هو الجزء من سوريا الذي يحتله الكيان الصهيوني؟",
+    "imagePath": null,
+    "categoryId": 1,
+    "levelId": 406,
+    "answer": "الجولان"
+  },
+  {
+    "id": 40,
+    "question": "ما اسم البحر الذي يقع بين الأردن وفلسطين؟",
+    "imagePath": null,
+    "categoryId": 4,
+    "levelId": 410,
+    "answer": "البحر الميت"
+  }, {
+    "id": 42,
+    "question": "إلى أي دولة ينتمي هذا العلم؟",
+    "imagePath": "assets/images/quizAssets/502.jpg",
+    "categoryId": 6,
+    "levelId": 502,
+    "answer": "قبرص"
+  },
+  {
+    "id": 44,
+    "question": "ما اسم البحر الذي يقع شمال تركيا؟",
+    "imagePath": null,
+    "categoryId": 4,
+    "levelId": 504,
+    "answer": "البحر الأسود"
+  }, {
+    "id": 52,
+    "question": "إلى أي دولة ينتمي هذا العلم؟",
+    "imagePath": "assets/images/quizAssets/602.jpg",
+    "categoryId": 6,
+    "levelId": 602,
+    "answer": "مقدونيا الشمالية"
+  },
+  {
+    "id": 55,
+    "question": "ما هي الدولة التي كانت تنتمي إليها معظم دول البلقان سابقًا؟",
+    "imagePath": null,
+    "categoryId": 11,
+    "levelId": 605,
+    "answer": "يوغوسلافيا"
+  },
+  {
+    "id": 59,
+    "question": "إلى أي دولة ينتمي هذا العلم؟",
+    "imagePath": "assets/images/quizAssets/609.jpg",
+    "categoryId": 6,
+    "levelId": 609,
+    "answer": "ألبانيا"
+  },
+  {
+    "id": 64,
+    "question": "إلى أي دولة ينتمي هذا العلم؟",
+    "imagePath": "assets/images/quizAssets/704.jpg",
+    "categoryId": 6,
+    "levelId": 704,
+    "answer": "أندورا"
+  },
+  {
+  "id": 65,
+  "question": "ما هي شبه الجزيرة التي تضم إسبانيا والبرتغال؟ شبه الجزيرة ...",
+  "imagePath": null,
+  "categoryId": 1,
+  "levelId": 705,
+  "answer": "الإيبيرية"
+}
+
+]

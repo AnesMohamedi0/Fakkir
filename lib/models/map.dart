@@ -46,6 +46,18 @@ class GameMap {
     );
   }
 
+  factory GameMap.fromJson(Map<String, dynamic> json) {
+    return GameMap(
+      id: json['id'] as int,
+      name: json['name'] as String,
+      isOpen: json['isOpen'] as bool? ?? false,
+      isDone: json['isDone'] as bool? ?? false,
+      mapBeforeId: json['mapBeforeId'] as int?,
+      difficulty: json['difficulty'] as int,
+      progress: json['progress'] as int? ?? 0,
+    );
+  }
+
   void addLevel(Level level) {
     levels.add(level);
   }

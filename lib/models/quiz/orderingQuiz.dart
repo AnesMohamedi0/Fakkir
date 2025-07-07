@@ -39,4 +39,16 @@ class OrderingQuiz extends Quiz {
       correctOrder: List<int>.from(jsonDecode(map['correctOrder'])),
     );
   }
+
+  factory OrderingQuiz.fromJson(Map<String, dynamic> json) {
+    return OrderingQuiz(
+      id: json['id'] as int,
+      question: json['question'] as String,
+      imagePath: json['imagePath'] as String?,
+      categoryId: json['categoryId'] as int,
+      levelId: json['levelId'] as int,
+      options: List<String>.from(json['options']),
+      correctOrder: List<int>.from(json['correctOrder']),
+    );
+  }
 }

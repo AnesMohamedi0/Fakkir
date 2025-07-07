@@ -45,4 +45,18 @@ class IntervalQuiz extends Quiz {
       margin: (map['margin'] as num).toDouble(),
     );
   }
+
+  factory IntervalQuiz.fromJson(Map<String, dynamic> json) {
+    return IntervalQuiz(
+      id: json['id'] as int,
+      question: json['question'] as String,
+      imagePath: json['imagePath'] as String?,
+      categoryId: json['categoryId'] as int,
+      levelId: json['levelId'] as int,
+      minInterval: (json['minInterval'] as num).toDouble(),
+      maxInterval: (json['maxInterval'] as num).toDouble(),
+      answer: (json['answer'] as num).toDouble(),
+      margin: (json['margin'] as num).toDouble(),
+    );
+  }
 }

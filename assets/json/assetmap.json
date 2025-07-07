@@ -1,0 +1,30 @@
+[
+  {
+    "mapId": 1,
+    "assetIds": [8, 6, 5]
+  },
+  {
+    "mapId": 2,
+    "assetIds": [6, 2, 3]
+  },
+  {
+    "mapId": 3,
+    "assetIds": [2, 6, 5]
+  },
+  {
+    "mapId": 4,
+    "assetIds": [1, 5, 2]
+  },
+  {
+    "mapId": 5,
+    "assetIds": [1, 5, 8]
+  },
+  {
+    "mapId": 6,
+    "assetIds": [3, 4, 8]
+  },
+  {
+    "mapId": 7,
+    "assetIds": [4, 7, 3]
+  }
+]

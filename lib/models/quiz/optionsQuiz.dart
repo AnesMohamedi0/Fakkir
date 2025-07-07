@@ -39,4 +39,16 @@ class OptionsQuiz extends Quiz {
       answers: List<int>.from(jsonDecode(map['answers'])),
     );
   }
+
+  factory OptionsQuiz.fromJson(Map<String, dynamic> json) {
+    return OptionsQuiz(
+      id: json['id'] as int,
+      question: json['question'] as String,
+      imagePath: json['imagePath'] as String?,
+      categoryId: json['categoryId'] as int,
+      levelId: json['levelId'] as int,
+      options: List<String>.from(json['options']),
+      answers: List<int>.from(json['answers']),
+    );
+  }
 }

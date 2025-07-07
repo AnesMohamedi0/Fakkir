@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:general_knowledge_app/models/quiz/completeQuiz.dart';
 import 'package:general_knowledge_app/models/quiz/stickingQuiz.dart';
-import 'package:general_knowledge_app/providers/quiz/completeProvider.dart';
 import 'package:general_knowledge_app/providers/quiz/stickingProvider.dart';
 import 'package:general_knowledge_app/providers/quizProvider.dart';
 import 'package:general_knowledge_app/views/quiz/confirmButton.dart';

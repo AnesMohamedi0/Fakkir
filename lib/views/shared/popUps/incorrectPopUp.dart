@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:general_knowledge_app/views/shared/colors.dart';
 import 'package:general_knowledge_app/views/shared/popUps/plusCoinsminusHeart.dart';
 import 'package:general_knowledge_app/views/shared/someviews.dart';
 
@@ -57,7 +58,7 @@ class _IncorrectPopUpState extends State<IncorrectPopUp>
                 height: height * 0.1,
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
-                    colors: [Colors.red.shade700, Colors.red.shade400],
+                    colors: [colormain[600]!, colormain[500]!],
                   ),
                 ),
               ),

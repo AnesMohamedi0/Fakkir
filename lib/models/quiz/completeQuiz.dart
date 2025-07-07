@@ -33,4 +33,15 @@ class CompleteQuiz extends Quiz {
       answer: map['answer'],
     );
   }
+
+  factory CompleteQuiz.fromJson(Map<String, dynamic> json) {
+    return CompleteQuiz(
+      id: json['id'],
+      question: json['question'],
+      imagePath: json['imagePath'],
+      categoryId: json['categoryId'],
+      levelId: json['levelId'],
+      answer: json['answer'],
+    );
+  }
 }

@@ -5,7 +5,6 @@ import 'package:general_knowledge_app/models/quiz/matchingQuiz.dart';
 import 'package:general_knowledge_app/models/quiz/optionsQuiz.dart';
 import 'package:general_knowledge_app/models/quiz/orderingQuiz.dart';
 import 'package:general_knowledge_app/models/quiz/quiz.dart';
-import 'package:general_knowledge_app/models/quiz/selectOnQuiz.dart';
 import 'package:general_knowledge_app/models/quiz/stickingQuiz.dart';
 import 'package:sqflite/sqflite.dart';
 
@@ -67,17 +66,6 @@ class QuizRepository {
 
     if (quiz.isNotEmpty) {
       return OrderingQuiz.fromMap(quiz.first);
-    }
-
-    quiz = await db.query(
-      'selectOnQuiz',
-      where: 'levelId = ?',
-      whereArgs: [levelId],
-      limit: 1,
-    );
-
-    if (quiz.isNotEmpty) {
-      return SelectOnQuiz.fromMap(quiz.first);
     }
 
     quiz = await db.query(

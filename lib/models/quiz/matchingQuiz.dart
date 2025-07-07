@@ -46,4 +46,19 @@ class MatchingQuiz extends Quiz {
       answer: Map<String, int>.from(answer),
     );
   }
+
+  factory MatchingQuiz.fromJson(Map<String, dynamic> json) {
+    return MatchingQuiz(
+      id: json['id'] as int,
+      question: json['question'] as String,
+      imagePath: json['imagePath'] as String?,
+      categoryId: json['categoryId'] as int,
+      levelId: json['levelId'] as int,
+      options: List<String>.from(json['options']),
+      toMatchWith: List<String>.from(json['toMatchWith']),
+      answer: (json['answerMap'] as Map<String, dynamic>).map(
+        (key, value) => MapEntry(key, int.parse(value)),
+      ),
+    );
+  }
 }

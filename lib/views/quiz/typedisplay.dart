@@ -5,7 +5,6 @@ import 'package:general_knowledge_app/models/quiz/matchingQuiz.dart';
 import 'package:general_knowledge_app/models/quiz/optionsQuiz.dart';
 import 'package:general_knowledge_app/models/quiz/orderingQuiz.dart';
 import 'package:general_knowledge_app/models/quiz/quiz.dart';
-import 'package:general_knowledge_app/models/quiz/selectOnQuiz.dart';
 import 'package:general_knowledge_app/models/quiz/stickingQuiz.dart';
 import 'package:general_knowledge_app/views/shared/someviews.dart';
 
@@ -38,7 +37,6 @@ final Map<Type, String> quizName = {
   MatchingQuiz: 'المطابقة',
   OptionsQuiz: 'الخيارات',
   OrderingQuiz: 'الترتيب',
-  SelectOnQuiz: 'التحديد',
   StickingQuiz: 'الإلصاق',
 };
 
