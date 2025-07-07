@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:general_knowledge_app/providers/playerprovider.dart';
+import 'package:general_knowledge_app/views/shared/colors.dart';
 import 'package:general_knowledge_app/views/shared/popUps/usingCoinsPopUp.dart';
 import 'package:general_knowledge_app/views/shared/someviews.dart';
 import 'package:provider/provider.dart';
@@ -54,13 +55,13 @@ class GetSolutionButton extends StatelessWidget {
                 colors:
                     provider.solutionUsed()
                         ? [
-                          const Color.fromARGB(50, 255, 162, 0),
-                          const Color.fromARGB(30, 255, 111, 0),
+                          const Color.fromARGB(70, 242, 212, 191),
+                          const Color.fromARGB(30, 242, 212, 191),
                         ]
-                        : [Colors.amber.shade700, Colors.amber.shade900],
+                        : [colormain[900]!, colormain[700]!],
               ),
               borderRadius: BorderRadius.circular(10),
-              border: Border.all(color: Colors.amber.shade900, width: 2),
+              border: Border.all(color: colorText, width: 2),
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -72,7 +73,7 @@ class GetSolutionButton extends StatelessWidget {
                   align: TextAlign.center,
                   color:
                       provider.solutionUsed()
-                          ? Colors.amber.shade900
+                          ? colorText
                           : const Color.fromARGB(255, 255, 255, 255),
                 ),
                 Row(
@@ -91,7 +92,7 @@ class GetSolutionButton extends StatelessWidget {
                       weight: FontWeight.w600,
                       color:
                           provider.solutionUsed()
-                              ? Colors.amber.shade900
+                              ? colorText
                               : const Color.fromARGB(255, 255, 255, 255),
                     ),
                   ],

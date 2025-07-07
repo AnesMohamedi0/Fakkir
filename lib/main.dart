@@ -12,7 +12,9 @@ import 'package:general_knowledge_app/providers/quiz/intervalProvider.dart';
 import 'package:general_knowledge_app/providers/quiz/matchingProvider.dart';
 import 'package:general_knowledge_app/providers/quiz/optionsProvider.dart';
 import 'package:general_knowledge_app/providers/quiz/orderingProvider.dart';
+import 'package:general_knowledge_app/providers/quiz/stickingProvider.dart';
 import 'package:general_knowledge_app/providers/quizProvider.dart';
+import 'package:general_knowledge_app/views/quiz/QuizPages/sticking.dart';
 import 'package:general_knowledge_app/views/shared/animatedBackground.dart';
 import 'package:general_knowledge_app/views/welcome/welecome.dart';
 import 'package:provider/provider.dart';
@@ -33,6 +35,7 @@ void main() {
         ChangeNotifierProvider(create: (_) => OptionsProvider()),
         ChangeNotifierProvider(create: (_) => OrderingProvider()),
         ChangeNotifierProvider(create: (_) => MatchingProvider()),
+        ChangeNotifierProvider(create: (_) => StickingProvider()),
         ChangeNotifierProvider(create: (_) => AssetsProvider()),
       ],
       child: const MyApp(),

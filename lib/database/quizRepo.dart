@@ -6,6 +6,7 @@ import 'package:general_knowledge_app/models/quiz/optionsQuiz.dart';
 import 'package:general_knowledge_app/models/quiz/orderingQuiz.dart';
 import 'package:general_knowledge_app/models/quiz/quiz.dart';
 import 'package:general_knowledge_app/models/quiz/selectOnQuiz.dart';
+import 'package:general_knowledge_app/models/quiz/stickingQuiz.dart';
 import 'package:sqflite/sqflite.dart';
 
 final Map<Type, String> quizTableMap = {
@@ -14,7 +15,7 @@ final Map<Type, String> quizTableMap = {
   MatchingQuiz: 'matchingQuiz',
   OptionsQuiz: 'optionsQuiz',
   OrderingQuiz: 'orderingQuiz',
-  SelectOnQuiz: 'selectOnQuiz',
+  StickingQuiz: 'stickingQuiz',
 };
 
 class QuizRepository {
@@ -99,6 +100,17 @@ class QuizRepository {
 
     if (quiz.isNotEmpty) {
       return OptionsQuiz.fromMap(quiz.first);
+    }
+
+    quiz = await db.query(
+      'stickingQuiz',
+      where: 'levelId = ?',
+      whereArgs: [levelId],
+      limit: 1,
+    );
+
+    if (quiz.isNotEmpty) {
+      return StickingQuiz.fromMap(quiz.first);
     }
 
     return null;

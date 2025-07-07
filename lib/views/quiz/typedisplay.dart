@@ -6,6 +6,7 @@ import 'package:general_knowledge_app/models/quiz/optionsQuiz.dart';
 import 'package:general_knowledge_app/models/quiz/orderingQuiz.dart';
 import 'package:general_knowledge_app/models/quiz/quiz.dart';
 import 'package:general_knowledge_app/models/quiz/selectOnQuiz.dart';
+import 'package:general_knowledge_app/models/quiz/stickingQuiz.dart';
 import 'package:general_knowledge_app/views/shared/someviews.dart';
 
 class QuizTypeContainer extends StatelessWidget {
@@ -38,6 +39,7 @@ final Map<Type, String> quizName = {
   OptionsQuiz: 'الخيارات',
   OrderingQuiz: 'الترتيب',
   SelectOnQuiz: 'التحديد',
+  StickingQuiz: 'الإلصاق',
 };
 
 final Map<Type, Color> quizColor = {
@@ -46,5 +48,5 @@ final Map<Type, Color> quizColor = {
   MatchingQuiz: Colors.cyan.shade700,
   OptionsQuiz: Colors.purple.shade700,
   OrderingQuiz: Colors.blueAccent.shade700,
-  SelectOnQuiz: Colors.greenAccent.shade700,
+  StickingQuiz: Colors.indigoAccent.shade700,
 };

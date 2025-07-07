@@ -78,6 +78,20 @@ CREATE TABLE optionsQuiz (
 )
 ''');
 
+      await db.execute('''
+CREATE TABLE stickingQuiz (
+  id INTEGER PRIMARY KEY,
+  question TEXT NOT NULL,
+  imagePath TEXT,
+  categoryId INTEGER NOT NULL,
+  levelId INTEGER NOT NULL,
+  answer TEXT NOT NULL,         -- simple string
+  options TEXT NOT NULL,        -- JSON List<String>
+  FOREIGN KEY (categoryId) REFERENCES quizCategory(id),
+  FOREIGN KEY (levelId) REFERENCES Level(id)
+)
+''');
+
       // Ordering Quiz Table
       await db.execute('''
 CREATE TABLE orderingQuiz (

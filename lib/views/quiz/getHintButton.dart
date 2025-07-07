@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:general_knowledge_app/providers/playerprovider.dart';
+import 'package:general_knowledge_app/views/shared/colors.dart';
 import 'package:general_knowledge_app/views/shared/popUps/usingCoinsPopUp.dart';
 import 'package:general_knowledge_app/views/shared/someviews.dart';
 import 'package:provider/provider.dart';
@@ -53,16 +54,13 @@ class GetHintButton extends StatelessWidget {
                 colors:
                     provider.hintUsed()
                         ? [
-                          const Color.fromARGB(50, 255, 196, 0),
-                          const Color.fromARGB(30, 255, 170, 0),
+                          const Color.fromARGB(70, 242, 212, 191),
+                          const Color.fromARGB(30, 242, 212, 191),
                         ]
-                        : [
-                          Colors.amberAccent.shade400,
-                          Colors.amberAccent.shade700,
-                        ],
+                        : [colormain[500]!, colormain[400]!],
               ),
               borderRadius: BorderRadius.circular(10),
-              border: Border.all(color: Colors.amberAccent.shade700, width: 2),
+              border: Border.all(color: colormain[600]!, width: 2),
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -74,7 +72,7 @@ class GetHintButton extends StatelessWidget {
                   align: TextAlign.center,
                   color:
                       provider.hintUsed()
-                          ? Colors.amberAccent.shade700
+                          ? colormain[500]
                           : const Color.fromARGB(255, 255, 255, 255),
                 ),
                 Row(
@@ -93,7 +91,7 @@ class GetHintButton extends StatelessWidget {
                       weight: FontWeight.w600,
                       color:
                           provider.hintUsed()
-                              ? Colors.amberAccent.shade700
+                              ? colormain
                               : const Color.fromARGB(255, 255, 255, 255),
                     ),
                   ],

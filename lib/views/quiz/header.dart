@@ -59,7 +59,7 @@ class _QuizHeaderState extends State<QuizHeader>
             return Positioned(
               top:
                   context.read<QuizProvider>().quiz!.imagePath == null
-                      ? height * 0.105
+                      ? height * 0.114
                       : height * 0.06,
               child: SizedBox(
                 width: width,
@@ -99,7 +99,7 @@ class _QuizHeaderState extends State<QuizHeader>
                 Positioned(
                   top:
                       context.read<QuizProvider>().quiz!.imagePath == null
-                          ? height * 0.155
+                          ? height * 0.165
                           : height * 0.123,
                   right: value,
                   child: CustomPaint(
@@ -115,7 +115,7 @@ class _QuizHeaderState extends State<QuizHeader>
                 Positioned(
                   top:
                       context.read<QuizProvider>().quiz!.imagePath == null
-                          ? height * 0.155
+                          ? height * 0.165
                           : height * 0.123,
                   left: value,
                   child: CustomPaint(

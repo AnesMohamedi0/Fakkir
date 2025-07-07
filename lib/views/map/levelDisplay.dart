@@ -1,6 +1,8 @@
 // ignore_for_file: use_build_context_synchronously
 
 import 'package:flutter/material.dart';
+import 'package:general_knowledge_app/providers/quiz/stickingProvider.dart';
+import 'package:general_knowledge_app/views/quiz/QuizPages/sticking.dart';
 import 'package:general_knowledge_app/views/quiz/quiz.dart';
 import 'package:general_knowledge_app/database/levelRepo.dart';
 import 'package:general_knowledge_app/database/quizRepo.dart';
@@ -59,7 +61,11 @@ class _LevelsDisplayState extends State<LevelsDisplay> {
                                 ? () async {
                                   Quiz? quiz = await QuizRepository()
                                       .getQuizByLevelId(item.id);
-                                  context.read<QuizProvider>().setQuiz(quiz!);
+                                  if (quiz != null) {
+                                    context.read<QuizProvider>().setQuiz(quiz);
+                                  } else {
+                                    return;
+                                  }
 
                                   final bool? result =
                                       await Navigator.push<bool>(
@@ -88,6 +94,7 @@ class _LevelsDisplayState extends State<LevelsDisplay> {
                                   context.read<OrderingProvider>().clear();
                                   context.read<MatchingProvider>().clear();
                                   context.read<OptionsProvider>().clear();
+                                  context.read<StickingProvider>().clear();
 
                                   if (result == null) {
                                     return;

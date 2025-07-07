@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:general_knowledge_app/models/quiz/stickingQuiz.dart';
 import 'package:general_knowledge_app/views/quiz/QuizPages/complete.dart';
 import 'package:general_knowledge_app/views/quiz/QuizPages/interval.dart';
 import 'package:general_knowledge_app/views/quiz/QuizPages/matching.dart';
@@ -10,6 +11,7 @@ import 'package:general_knowledge_app/models/quiz/matchingQuiz.dart';
 import 'package:general_knowledge_app/models/quiz/optionsQuiz.dart';
 import 'package:general_knowledge_app/models/quiz/orderingQuiz.dart';
 import 'package:general_knowledge_app/providers/quizProvider.dart';
+import 'package:general_knowledge_app/views/quiz/QuizPages/sticking.dart';
 import 'package:general_knowledge_app/views/shared/animatedBackground.dart';
 import 'package:general_knowledge_app/views/shared/colors.dart';
 import 'package:general_knowledge_app/views/shared/heartCoinBar.dart';
@@ -45,6 +47,7 @@ class _QuizPageState extends State<QuizPage> {
       CompleteQuiz: CompletePage(),
       OrderingQuiz: OrderingPage(),
       MatchingQuiz: MatchingPage(),
+      StickingQuiz: StickingPage(),
     };
 
     return Scaffold(

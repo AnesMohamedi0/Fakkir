@@ -5,6 +5,7 @@ import 'package:general_knowledge_app/models/quiz/optionsQuiz.dart';
 import 'package:general_knowledge_app/models/quiz/orderingQuiz.dart';
 import 'package:general_knowledge_app/models/quiz/quiz.dart';
 import 'package:general_knowledge_app/models/quiz/selectOnQuiz.dart';
+import 'package:general_knowledge_app/models/quiz/stickingQuiz.dart';
 import 'package:general_knowledge_app/seeders/quizBymap.dart/arabicGulf.dart';
 import 'package:general_knowledge_app/seeders/quizBymap.dart/egyptSudan.dart';
 import 'package:general_knowledge_app/seeders/quizBymap.dart/levant.dart';
@@ -25,13 +26,25 @@ Future<void> initQuiz(Database db) async {
   quizzes += quizMapBulkans;
   quizzes += quizMapSouthEu;
 
+  quizzes += [
+    StickingQuiz(
+      id: 500,
+      question: "ما اسم أعلى جبل في العالم؟",
+      categoryId: 1,
+      levelId: 801,
+      imagePath: null,
+      answer: "إيفرست",
+      options: ["كا", "ست", "رتو", "لا", "يا", "فر", "م", "إي", "ما", "هي"],
+    ),
+  ];
+
   final Map<Type, String> quizTableMap = {
     IntervalQuiz: 'intervalQuiz',
     CompleteQuiz: 'completeQuiz',
     MatchingQuiz: 'matchingQuiz',
     OptionsQuiz: 'optionsQuiz',
     OrderingQuiz: 'orderingQuiz',
-    SelectOnQuiz: 'selectOnQuiz',
+    StickingQuiz: 'stickingQuiz',
   };
   for (var quiz in quizzes) {
     final table = quizTableMap[quiz.runtimeType];
