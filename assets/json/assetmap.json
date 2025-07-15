@@ -21,10 +21,18 @@
   },
   {
     "mapId": 6,
-    "assetIds": [3, 4, 8]
+    "assetIds": [5, 1, 3]
   },
   {
     "mapId": 7,
+    "assetIds": [3, 4, 8]
+  },
+  {
+    "mapId": 8,
     "assetIds": [4, 7, 3]
+  },
+  {
+    "mapId": 9,
+    "assetIds": [1, 7, 9]
   }
 ]

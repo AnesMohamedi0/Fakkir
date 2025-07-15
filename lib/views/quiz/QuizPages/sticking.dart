@@ -52,20 +52,6 @@ class _StickingPageState extends State<StickingPage>
     return Stack(
       children: [
         Positioned(
-          top: height * 0.48,
-          left: width * 0.17,
-          child: IconButton(
-            onPressed: () {
-              context.read<StickingProvider>().removeLast();
-            },
-            icon: Icon(
-              Icons.backspace,
-              size: height * 0.035,
-              color: colorTextDark,
-            ),
-          ),
-        ),
-        Positioned(
           top: height * 0.46,
 
           child: Consumer<StickingProvider>(
@@ -78,8 +64,20 @@ class _StickingPageState extends State<StickingPage>
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
+                        IconButton(
+                          onPressed: () {
+                            context.read<StickingProvider>().clearInput();
+                          },
+                          icon: Icon(
+                            Icons.replay,
+                            size: height * 0.035,
+                            color: colorTextDark,
+                          ),
+                        ),
                         Container(
-                          width: provider.answer.length * height * 0.03,
+                          width:
+                              provider.answer.length * height * 0.017 +
+                              height * 0.035,
                           height: height * 0.05,
                           alignment: Alignment.center,
 
@@ -92,12 +90,33 @@ class _StickingPageState extends State<StickingPage>
                             ),
                             color: Colors.white70,
                           ),
-                          child: SubTitleText(
-                            text: provider.input,
-                            size: height * 0.023,
-                            weight: FontWeight.w600,
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              SubTitleText(
+                                text: provider.input,
+                                size: height * 0.023,
+                                weight: FontWeight.w600,
+                                color: colorTextDark,
+                                align: TextAlign.center,
+                              ),
+                              Icon(
+                                Icons.circle,
+                                size: height * 0.005,
+                                color: colorTextDark,
+                              ),
+                            ],
+                          ),
+                        ),
+                        IconButton(
+                          onPressed: () {
+                            context.read<StickingProvider>().removeLast();
+                          },
+                          icon: Icon(
+                            Icons.backspace,
+                            size: height * 0.035,
                             color: colorTextDark,
-                            align: TextAlign.center,
                           ),
                         ),
                       ],
@@ -129,7 +148,7 @@ class _StickingPageState extends State<StickingPage>
                           child: Container(
                             padding: EdgeInsets.symmetric(
                               vertical: height * 0.01,
-                              horizontal: width * 0.03,
+                              horizontal: width * 0.02,
                             ),
                             decoration: BoxDecoration(
                               gradient: LinearGradient(
@@ -162,7 +181,7 @@ class _StickingPageState extends State<StickingPage>
                             ),
                             child: SubTitleText(
                               text: provider.options[index],
-                              size: height * 0.023,
+                              size: height * 0.021,
                               weight: FontWeight.w600,
                               color: colorTextDark,
                               align: TextAlign.center,

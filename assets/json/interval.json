@@ -1,15 +1,16 @@
-[
+[ 
   {
-    "id": 5,
-    "question": "ما هي المساحة الإجمالية لتونس بالكيلومتر المربع؟",
-    "imagePath": null,
-    "categoryId": 7,
-    "levelId": 105,
-    "minInterval": 100000.0,
-    "maxInterval": 250000.0,
-    "answer": 163610.0,
-    "margin": 10000.0
-  },
+  "id": 4,
+  "question": "في أي سنة حصلت تونس والمغرب على الاستقلال؟",
+  "imagePath": null,
+  "categoryId": 11,
+  "levelId": 104,
+  "minInterval": 1900.0,
+  "maxInterval": 2000.0,
+  "answer": 1956.0,
+  "margin": 4.0
+}
+,
   {
    "id": 13,
     "question": "ما هو طول نهر النيل بالكيلومتر؟",
@@ -55,17 +56,6 @@
     "margin": 1.0
   },
   {
-    "id": 34,
-    "question": "ما هي المساحة الإجمالية لدول بلاد الشام مجتمعة (بالألف كيلومتر مربع)؟",
-    "imagePath": null,
-    "categoryId": 7,
-    "levelId": 404,
-    "minInterval": 250.0,
-    "maxInterval": 350.0,
-    "answer": 291.0,
-    "margin": 5.0
-  },
-  {
     "id": 35,
     "question": "كم سنة دامت الدولة الأموية؟",
     "imagePath": null,
@@ -81,8 +71,8 @@
     "imagePath": null,
     "categoryId": 7,
     "levelId": 505,
-    "minInterval": 70.0,
-    "maxInterval": 100.0,
+    "minInterval": 80.0,
+    "maxInterval": 120.0,
     "answer": 85.0,
     "margin": 2.0
   },
@@ -92,8 +82,8 @@
     "imagePath": null,
     "categoryId": 11,
     "levelId": 509,
-    "minInterval": 1900.0,
-    "maxInterval": 1950.0,
+    "minInterval": 1800.0,
+    "maxInterval": 1980.0,
     "answer": 1924.0,
     "margin": 1.0
   }, {
@@ -127,5 +117,38 @@
     "maxInterval": 800.0,
     "answer": 781.0,
     "margin": 5.0
-  }
+  }, {
+  "id": 85,
+  "question": "كم عدد الدول التي لها حدود مع سويسرا؟",
+  "imagePath": null,
+  "categoryId": 1,
+  "levelId": 905,
+  "minInterval": 3.0,
+  "maxInterval": 10.0,
+  "answer": 5.0,
+  "margin": 0.0
+}, {
+  "id": 94,
+  "question": "ما هو عدد سكان المملكة المتحدة؟",
+  "imagePath": null,
+  "categoryId": 5,
+  "levelId": 1004,
+  "minInterval": 40.0,
+  "maxInterval": 70.0,
+  "answer": 67.0,
+  "margin": 2.0
+}, {
+  "id": 100,
+  "question": "كم تبعد لندن عن باريس بالكيلومترات؟",
+  "imagePath": null,
+  "categoryId": 1,
+  "levelId": 1010,
+  "minInterval": 200.0,
+  "maxInterval": 450.0,
+  "answer": 344.0,
+  "margin": 15.0
+}
+
+
+
 ]

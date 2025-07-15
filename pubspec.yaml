@@ -42,6 +42,7 @@ dependencies:
   sqflite: ^2.4.2
   path: ^1.9.1
   arabic_font: ^0.0.9
+  flutter_gen_runner: ^5.10.0
 
 dev_dependencies:
   flutter_test:
@@ -83,6 +84,9 @@ flutter:
     - assets/images/quizAssets/602.jpg
     - assets/images/quizAssets/609.jpg
     - assets/images/quizAssets/704.jpg
+    - assets/images/quizAssets/807.jpg
+    - assets/images/quizAssets/906.jpg
+    - assets/images/quizAssets/1007.jpg
     - assets/images/MapAssets/ship.png
     - assets/images/MapAssets/ship2.png
     - assets/images/MapAssets/palmtree.png
@@ -91,6 +95,7 @@ flutter:
     - assets/images/MapAssets/lighthouse.png
     - assets/images/MapAssets/snowforest.png
     - assets/images/MapAssets/oasis.png
+    - assets/images/MapAssets/house.png
     - assets/json/map.json
     - assets/json/complete.json
     - assets/json/interval.json

@@ -58,6 +58,9 @@ class StickingProvider extends ChangeNotifier {
   }
 
   bool canAddSpace() {
+    if (input.isEmpty) {
+      return false;
+    }
     return (input[input.length - 1] != " ");
   }
 

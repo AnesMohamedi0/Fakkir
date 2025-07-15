@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:general_knowledge_app/database/mapRepo.dart';
 import 'package:general_knowledge_app/providers/assetsProvider.dart';
 import 'package:general_knowledge_app/views/map/map.dart';
-import 'package:general_knowledge_app/database/levelRepo.dart'
-    show LevelRepository;
+import 'package:general_knowledge_app/database/levelRepo.dart';
 import 'package:general_knowledge_app/models/map.dart';
 import 'package:general_knowledge_app/providers/mapProvider.dart';
 import 'package:general_knowledge_app/seeders/pathseed.dart';

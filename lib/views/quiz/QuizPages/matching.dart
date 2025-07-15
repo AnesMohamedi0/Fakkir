@@ -117,7 +117,7 @@ class _MatchingPageState extends State<MatchingPage>
                     },
                   ),
                 ),
-                SizedBox(height: height * 0.02),
+                SizedBox(height: height * 0.01),
 
                 Consumer<MatchingProvider>(
                   builder: (context, provider, _) {
@@ -179,7 +179,7 @@ class _MatchingPageState extends State<MatchingPage>
                     );
                   },
                 ),
-                SizedBox(height: height * 0.03),
+                SizedBox(height: height * 0.025),
                 Consumer<MatchingProvider>(
                   builder: (context, provider, _) {
                     return AnimatedBuilder(
